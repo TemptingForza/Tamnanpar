@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    font-family: "Poppins", sans-serif;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: #212121;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .header a {
+    max-width: 50%;
+  }
+
+  .Logo{
+   height: auto;
+   object-fit: cover;
+  }
+
+  .Logo img{
+    max-width: 20%;
+    max-height: 20%;
+  }
+
+  nav{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Align items to the right */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+  }
+
+  nav a{
+    position: relative;
+    font-size: 18px;
+    color: whitesmoke;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+
+  nav a::before{
+    content: '';
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+  }
+
+  nav a:hover::before{
+    width: 100%;
+  }
+
+
+
+   /* booking rooms*/
+   .AllRooms{
+    position: absolute;
+    flex-wrap: wrap;
+    width: 120%; /* set a specific width */
+    margin-left: 2%; /* use margins to center the box row */
+    justify-content: space-evenly;
+    border-radius: 10px;
+    grid-template-rows: repeat(10, 1fr);
+  }
+
+  .Rooms {
+    width: calc(80% - 10px);
+    height: 500px;
+    margin-top: 170px;
+    margin-bottom: 100px;/*spaced from the bottom*/
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .Rooms img {
+    width: 350%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    flex: 1 0 80%;
+  }
+
+  .description {
+    width: calc(120% - 1em);
+    padding-left: 20px;
+    float: right;
+  }
+
+  * {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: flex}
+img {vertical-align: middle;}
+
+/* Slideshow container max width was 44rem*/
+.slideshow-container {
+  max-width: 800px; 
+  max-height: 600px;
+  min-width: 700px;
+  min-height: 500px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.Slides img, .Slides1 img, .Slides2 img, .Slides3 img, .Slides4 img, .Slides5 img{
+  position:absolute;
+  border-radius: 10px;
+}
+
+.Slides p{
+  text-align: center;
+}
+
+.roomtypes{
+  display: flex;
+  position: relative;
+  max-height: 600px;
+  min-height: 450px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 40px;
+}
+
+.navbutton{
+  max-height: 400px;
+  max-width: 800px;
+  min-height: 400px;
+  min-width: 400px;
+}
+
+.description{
+  text-align: center;
+  background-color: rgb(214, 199, 199);/*The color needs to bbe the background colour*/
+}
+
+.description button{
+  cursor: pointer;
+  margin-top: 30%;
+  border-radius: 5px;
+  border-style: solid;
+  min-width: 80px;
+  min-height: 40px;
+  border-color: forestgreen;
+  background-color: lightblue;
+  transition: 0.4s;
+}
+
+.description button:hover{
+  color: white;
+  background-color: forestgreen;
+  min-width: 100px;
+  min-height: 60px;
+  font-weight: bold;
+}
+
+.row {
+  margin-top: 10%;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin-bottom: 10%;
+}
+
+
+
+
+
+
+
+/* Create two equal columns that sits next to each other the page is the resort page styles*/
+.column {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 3 columns */
+  gap: 10px;
+  flex: 50%;
+  padding: 0 4px;
+}
+.column img {
+  opacity: 1;
+}
+.column img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.Room{
+  border-radius: 5px;
+  border-style: ridge;
+  background-color: antiquewhite;
+}
+.desc{
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: 'Crimson Pro';
+}
+.desc b{
+  font-family: 'Crimson Pro';
+}
+
+.popup, .popup1, .popup2, .popup3, .popup4, .popup5 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#closePopup, #closePopup1, #closePopup2, #closePopup3, #closePopup4, #closePopup5{
+  cursor: pointer;
+  border-radius: 20px;
+  border-style: solid;
+  min-width: 28px;
+  min-height: 28px;
+  margin-left: 98.5%;
+  margin-top: 1%;
+  border-color: forestgreen;
+  background-color: lightblue;
+  transition: 0.4s;
+}
+#closePopup:hover, #closePopup1:hover, #closePopup2:hover, #closePopup3:hover, #closePopup4:hover, #closePopup5:hover{
+  color: white;
+  background-color: forestgreen;
+  min-width: 33px;
+  min-height: 33px;
+  margin-top: 0.5%;
+  font-weight: bold;
+}
+
+.popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  width: 75%;
+  height: 2000px;
+}
+
+.popup-content p{
+  margin-top: 63%;
+  font-size: 30px;
+  font-family: 'Crimson Pro';
+}
+
+.Slides, .Slides1/*, .Slides2, .Slides3, .Slides4, .Slides5*/ {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.Slide-Contain{
+  width: 1280px;
+  height: 720px;
+  top: 16%;
+  left: 15.5%;
+  position: absolute;
+}
+
+/* Next & previous buttons */
+.prev, .next, .prev1, .next1 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next, .next1 {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover/*, .prev1:hover, .next1:hover, .prev2:hover, .next2:hover*/ {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.Slides img:hover, .Slides1 img:hover, .Slides2 img:hover/*, .Slides3 img:hover, .Slides4 img:hover, .Slides5 img:hover*/{
+  opacity: 1;
+}
+
+.Slides, .Slides1, .Slides2/*, .Slides3, .Slides4, .Slides5*/{
+  margin-top: 13%;
+}
