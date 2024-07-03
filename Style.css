@@ -1,4 +1,5 @@
 *{
+  /*Styles here are used for the test site*/
     margin: 0;
     padding: 0;
     
@@ -254,20 +255,21 @@ img {vertical-align: middle;}
 }
 
 .popup-content p{
-  margin-top: 63%;
+  margin-top: 42%;
+  margin-left: 10%;
   font-size: 30px;
   font-family: 'Crimson Pro';
 }
 
-.Slides, .Slides1/*, .Slides2, .Slides3, .Slides4, .Slides5*/ {display: none}
+.Slides, .Slides1, .Slides2, .Slides3, .Slides4, .Slides5/**/ {display: none}
 img {vertical-align: middle;}
 
 /* Slideshow container */
 .Slide-Contain{
-  width: 1280px;
+  width: 60%;
   height: 720px;
-  top: 16%;
-  left: 15.5%;
+  top: 18%;
+  left: 20%;
   position: absolute;
 }
 
@@ -275,10 +277,12 @@ img {vertical-align: middle;}
 .prev, .next, .prev1, .next1 {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 60%;
   width: auto;
   padding: 16px;
   color: white;
+  background-color: #888;
+  opacity: 0.7;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
