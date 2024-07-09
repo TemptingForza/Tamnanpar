@@ -122,9 +122,9 @@ img {vertical-align: middle;}
   border-radius: 10px;
 }
 
-.Slides p{
+/*.Slides p{
   text-align: center;
-}
+}*/
 
 .roomtypes{
   display: flex;
@@ -168,18 +168,15 @@ img {vertical-align: middle;}
   font-weight: bold;
 }
 
+
+
+
 .row {
   margin-top: 10%;
   flex-wrap: wrap;
   padding: 0 4px;
   margin-bottom: 10%;
 }
-
-
-
-
-
-
 
 /* Create two equal columns that sits next to each other the page is the resort page styles*/
 .column {
@@ -261,7 +258,7 @@ img {vertical-align: middle;}
   font-family: 'Crimson Pro';
 }
 
-.Slides, .Slides1, .Slides2, .Slides3, .Slides4, .Slides5/**/ {display: none}
+.Slides, .Slides1, .Slides2, .Slides3/*, .Slides4, .Slides5*/ {display: none}
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -302,10 +299,10 @@ img {vertical-align: middle;}
   color: black;
 }
 
-.Slides img:hover, .Slides1 img:hover, .Slides2 img:hover/*, .Slides3 img:hover, .Slides4 img:hover, .Slides5 img:hover*/{
+.Slides img:hover, .Slides1 img:hover, .Slides2 img:hover, .Slides3 img:hover/*, .Slides4 img:hover, .Slides5 img:hover*/{
   opacity: 1;
 }
 
-.Slides, .Slides1, .Slides2/*, .Slides3, .Slides4, .Slides5*/{
+.Slides, .Slides1, .Slides2, .Slides3/*, .Slides4, .Slides5*/{
   margin-top: 13%;
 }
