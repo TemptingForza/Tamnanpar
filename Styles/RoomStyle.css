@@ -1,0 +1,97 @@
+*{
+    /*Styles here are used for the main parts will need style form the test site to full function*/
+      margin: 0;
+      padding: 0;
+      
+      font-family: "Poppins", sans-serif;
+    }
+  
+/*Header is nav menu setting*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 15%;
+    min-height: 15%;
+    padding: 1rem;
+    background-color: rgba(21,21,21,0.7);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .header a {
+    max-width: 50%;
+  }
+  
+  .Logo{
+   height: auto;
+   object-fit: cover;
+  }
+  
+  .Logo img{
+    max-width: 20%;
+    max-height: 20%;
+  }
+  
+  nav{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Align items to the right */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  nav a{
+    position: relative;
+    font-size: 18px;
+    color: whitesmoke;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav a::before{
+    content: '';
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+  }
+  
+  nav a:hover::before{
+    width: 100%;
+  }
+  
+  
+  #footer {
+    background-color: rgb(20,20,20);
+    position: fixed; /* change from absolute to fixed */
+    bottom: 0; /* position the footer at the bottom of the viewport */
+    width: 100%;
+    height: 6%;
+    }
+  
+    #footer a {
+      float: left;
+      display: flex;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      font-family: "Poppins", sans-serif;
+  }
+      
+      
+      
+      #footer a:hover {
+              background-color:white;
+              color: #80e5ff;
+          }

@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href='https://fonts.googleapis.com/css?family=Crimson Pro' rel='stylesheet'>
-    <link rel="stylesheet" href="Styles.css"> 
+    <link rel="stylesheet" href="../Styles/Styles.css"> 
   </head>
   <body style="background-color: rgb(214, 199, 199);">
     <header class="header">
-      <a href="Home.html" class="Logo"><img src="LOGO TAMNANPAR (L).png"></a>
-      <nav>
-        <div>
-          <ul id ="menu">
-            <a href="Home.html">Home</a>
-            <a href="Restaurant.html">Restaurant</a>
-            <a href="Waterpark.html">Water Park</a>
-            <a href="Resort.html">Resort</a>
-            <a href="#" id="contact-link">Contact Us</a>
-          </ul>
-        </div>
-      </nav>  
+      <div class="header-ui">
+        <picture>
+          <a href="Home.html" class="Logo"><img src="../Logo/LOGO TAMNANPAR (L).png"></a>
+        </picture>
+        <nav>
+          <div>
+            <ul id ="menu" class="nav-link">
+              <a href="Home.html">Home</a>
+              <a href="Restaurant.html">Restaurant</a>
+              <a href="Waterpark.html">Water Park</a>
+              <a href="Resort.html">Resort</a>
+              <a href="#" id="contact-link">Contact Us</a>
+            </ul>
+          </div>
+        </nav>  
+      </div>
     </header>
 
     <!--This is the contact us popup-->
@@ -31,16 +35,18 @@
         <button id="close-contact">X</button>
       </div>
     </div>
-    <script src ="ContactUs.js"></script>
+    <script src ="../Scripts/ContactUs.js"></script>
     <!--This is the contact us popup-->
+
+    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 8vh;">
+    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
 
     <div class="Welcome">
       <div class="Title">
         <h2>Tamnanpar</h2>
       </div>
       <div class="HomeDetails">
-        <iframe width="1600" height="640" src="https://www.youtube.com/embed/z52F9z4IhYE?controls=1
-        ">
+        <iframe class="Tamnanpar-Video" src="https://www.youtube.com/embed/z52F9z4IhYE?controls=1">
         </iframe>        
         <pre>The thai mean of Tamnanpar is <b>"A Legend Of Forest" (绿光森林)</b>. 
           It means green forest.
@@ -55,12 +61,12 @@
       </div>
       <div class="ImageSlider">
         <div class="TamImage">
-          <div><img src="RestaurantPath.jpg"></div>
-          <div><img src="Riverside.jpg"></div>
-          <div><img src="RoomVariety/Cozy King/Cozy King 3.jpg"></div>
-          <div><img src="RoomVariety/Private Pool Suite/FenderFoto-01990.jpg"></div>
-          <div><img src="Restaurant/FenderFoto-02910.jpg"></div>
-          <div><img src="Restaurant/FenderFoto-02908.jpg"></div>
+          <div><img src="../Images/RestaurantPath.jpg"></div>
+          <div><img src="../Images/Riverside.jpg"></div>
+          <div><img src="../RoomVariety/Cozy King/Cozy King 3.jpg"></div>
+          <div><img src="../RoomVariety/Private Pool Suite/FenderFoto-01990.jpg"></div>
+          <div><img src="../Restaurant/FenderFoto-02910.jpg"></div>
+          <div><img src="../Restaurant/FenderFoto-02908.jpg"></div>
         </div>
       </div>
     </div>

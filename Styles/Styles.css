@@ -56,6 +56,128 @@
     font-weight: bold;
   }
 
+  /*Home page Style*/
+  .Welcome{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100hv;
+  }
+
+  @media (max-width: 320px) {
+
+  }
+
+  .Title{
+    margin-bottom: 2vh;
+  }
+  .HomeDetails{
+    margin-bottom: 2vh;
+  }
+  .ImageSlider{
+    background-color: green;
+  }
+  .TamImage{
+   display: flex;
+  }
+  .TamImage div img{
+    width: 100%;
+    height:300px;
+  }
+  /*Home page Style*/
+
+  /*Header is nav menu setting*/
+.header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  max-height: 17vh;
+  background-color: rgba(21,21,21,0.7);
+  align-items: center;
+  z-index: 100;
+}
+
+.HomeDetails pre{
+
+}
+
+.Title h2 {
+  color: green;
+  font-size: 10vh;
+  font-family: 'Crimson Pro';
+}
+
+.nav-link a{
+  font-size: 200%;
+}
+
+.Logo{
+ max-height: 18%;
+ object-fit: cover;
+}
+
+.header .Logo img{
+  margin-top: 0vh;
+  max-width: auto;
+  max-height: 10vh;
+}
+
+.header-ui{
+  display: flex;
+}
+
+nav{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between; /* Align items to the right */
+  align-items: center;
+  padding: 0;
+  margin: 0%;
+
+}
+
+nav a{
+  position: relative;
+  font-size: 18px;
+  color: whitesmoke;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+nav a::before{
+  content: '';
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+}
+
+nav a:hover::before{
+  width: 100%;
+}
+
+.Tamnanpar-Video{
+  align-items: center;
+  width: 80%; 
+  height: 300px; 
+}
+
+@media (min-width: 430px){
+  .Tamnanpar-Video {
+    align-items: center;
+    width: 80%; 
+    height: 50%; 
+  }  
+}
+/*End of header and video styles*/
+
+
   /*Used for rooms to make grid*/
   .ration-content img {
     width: 100%;
@@ -71,8 +193,16 @@
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 10px;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s;
+  }
+
+  .content-info-text {
+    margin-top: 5px;
+  }
+
+  .content-info-text p {
+    color: rgba(218, 165, 32, 0.76);
   }
 
   .ResortRoom {
@@ -90,13 +220,41 @@
     height: 100%;
   }
 
-  .row-flex-content-rooms {
-    display: grid;
-    grid-template-columns: 2, 1fr;
-    grid-template-rows: 5, 1fr;
-    margin-left: 10px;
-    margin-right: 10px;
-    gap: 10px;
+  .link-text {
+    color: forestgreen;
+    font-style: italic;
+    text-decoration: none;
+  }
+
+  .link-text:hover {
+    color: purple;
+    text-decoration: underline;
+    font-size: 120%;
+    transition: 0.5s;
+  }
+
+  
+
+  @media (min-width: 1600px) {
+    .row-flex-content-rooms{
+      display: grid;
+      grid-template-columns: 4, 1fr;
+      grid-template-rows: 3, 1fr;
+      margin-left: 10px;
+      margin-right: 10px;
+      gap: 10px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .row-flex-content-rooms{
+      display: grid;
+      grid-template-columns: 4, 1fr;
+      grid-template-rows:3, 1fr;
+      margin-left: 10px;
+      margin-right: 10px;
+      gap: 10px;
+    }
   }
   /*Used for rooms to make grid*/
 
@@ -205,69 +363,6 @@ option {
 }
 /*language drop downmenu*/
 
-/*Header is nav menu setting*/
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-height: 15%;
-  min-height: 15%;
-  padding: 1rem;
-  background-color: rgba(21,21,21,0.7);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  z-index: 100;
-}
-
-.header a {
-  max-width: 50%;
-}
-
-.Logo{
- height: auto;
- object-fit: cover;
-}
-
-.Logo img{
-  max-width: 20%;
-  max-height: 20%;
-}
-
-nav{
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between; /* Align items to the right */
-  align-items: center;
-  padding: 0;
-  margin: 0;
-
-}
-
-nav a{
-  position: relative;
-  font-size: 18px;
-  color: whitesmoke;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-}
-
-nav a::before{
-  content: '';
-  position: absolute;
-  top: 80%;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #fff;
-}
-
-nav a:hover::before{
-  width: 100%;
-}
-
 
 #footer {
   background-color: rgb(20,20,20);
@@ -310,13 +405,6 @@ nav a:hover::before{
       text-align: center;
       font-size: 18px;
       font-family: "Poppins", sans-serif;
-    }
-
-    .container.p-rooms{
-
-    }
-
-    .row.row-flex-content-rooms{
     }
 
     .column{
@@ -476,20 +564,15 @@ nav a:hover::before{
       padding: 0;
       min-height: 100vh;
       display: flex;
+      justify-content: center;
       flex-direction: column;
-      height: 100%;
-      width: 100%;
+
       font-family: "Poppins", sans-serif;
       font-size: 12px;
       color: #5DB435;
       background-color: rgb(209, 203, 203);
     }
 
-    h2{
-      color: green;
-      font-size: 100px;
-      font-family: 'Crimson Pro';
-    }
 
     p{
       color: #212121;
@@ -501,31 +584,6 @@ nav a:hover::before{
       font-size: 30px;
       font-family: 'Crimson Pro';
     }
-
-
-    /*Home page Style*/
-    .Welcome{
-      text-align: center;
-      margin-top: 8%;
-    }
-    .Title{
-      margin-bottom: 20px;
-    }
-    .HomeDetails{
-      margin-bottom: 20px;
-    }
-    .ImageSlider{
-      background-color: green;
-    }
-    .TamImage{
-     display: flex;
-    }
-    .TamImage div img{
-      width: 100%;
-      height:300px;
-    }
-    /*Home page Style*/
-
 
     /*Restaurant page Style*/
     .AboutR{

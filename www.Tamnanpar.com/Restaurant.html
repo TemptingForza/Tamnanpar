@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant</title>
     <link href='https://fonts.googleapis.com/css?family=Crimson Pro' rel='stylesheet'>
-    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="../Styles/Styles.css">
 </head>
   <body style="background-color: rgb(214, 199, 199);">
     <header class="header">
-      <a href="Home.html" class="Logo"><img src="LOGO TAMNANPAR (L).png"></a>
-      <nav>
-        <div>
-          <ul id ="menu">
-            <a href="Home.html">Home</a>
-            <a href="Restaurant.html">Restaurant</a>
-            <a href="Waterpark.html">Water Park</a>
-            <a href="Resort.html">Resort</a>
-            <a href="#" id="contact-link">Contact Us</a>
-          </ul>
-        </div>
-      </nav>  
+      <div class="header-ui">
+        <picture>
+          <a href="Home.html" class="Logo"><img src="../Logo/LOGO TAMNANPAR (L).png"></a>
+        </picture>
+        <nav>
+          <div>
+            <ul id ="menu" class="nav-link">
+              <a href="Home.html">Home</a>
+              <a href="Restaurant.html">Restaurant</a>
+              <a href="Waterpark.html">Water Park</a>
+              <a href="Resort.html">Resort</a>
+              <a href="#" id="contact-link">Contact Us</a>
+            </ul>
+          </div>
+        </nav>  
+      </div>
     </header>
     <!--This is the contact us popup-->
     <div id="contact-container">
@@ -31,12 +35,12 @@
         <button id="close-contact">X</button>
       </div>
     </div>
-    <script src ="ContactUs.js"></script>
+    <script src ="../Scripts/ContactUs.js"></script>
     <!--This is the contact us popup-->
 
     <div class="AboutRS">
       <div class="Restaur">
-        <img src="Restaurant/FenderFoto-03159.jpg">
+        <img src="../Restaurant/FenderFoto-03159.jpg">
       </div>
       <div class="RestDet">
         <pre>
@@ -70,13 +74,13 @@
     </div>
     
 
-    <div class="language-selector">
+    <!--div class="language-selector">
         <select id="languageSelect">
             <option value="th">ไทย</option>
             <option value="en">English</option>
             <option value="ch">中文</option>
           </select>
-    </div>
+    </div-->
         <!-- contact in footer will also include qr code, facebook, line, instagram, tiktok, phone numbers for resort, restaraunt number-->
         <footer id="footer">
           <a href="about.html" >About Us</a>
