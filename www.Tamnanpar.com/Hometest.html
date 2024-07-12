@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Crimson Pro' rel='stylesheet'> 
+  </head>
+  <body style="background-color: rgb(214, 199, 199);">
+    <style>
+    *{
+  margin: 0;
+  padding: 0;
+}
+body{
+  min-height: 100vh;
+}
+nav{
+  max-height: 30vh;
+  background-color:rgba(21, 21, 21, 0.89);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul{
+  position: fixed;
+  background-color:rgba(21,21,21,0.7);
+  width: 100%;
+  height: 10vh;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav li{
+  height: 50px;
+}
+nav a{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+}
+
+.sidebar a{
+  font-size: 2.5vh;
+  font-style: "Poppins", sans-serif;
+}
+
+.hideOnMobile a{
+  font-size: 2.5vh;
+  font-style: "Poppins", sans-serif;
+}
+
+.hideOnMobile a:hover{
+  background-color: #807e7e;
+}
+
+nav .Logo a:hover{
+  background-color: rgba(21,21,21,0.7);
+}
+
+nav li:first-child{
+  margin-right: auto;
+}
+.sidebar{
+  position: fixed;
+  top: 0; 
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(46, 46, 46, 0.089);
+  backdrop-filter: blur(5px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 50;
+}
+.sidebar li{
+  margin-top: 2.5vh;
+  width: 100%;
+}
+.sidebar a{
+  width: 100%;
+}
+.menu-button{
+  display: none;
+}
+
+.Logo{
+  max-height: 8vh;
+}
+
+.Logo img{
+  margin-top: 0vh;
+  max-width: auto;
+  max-height: 10vh;
+}
+
+@media (max-width: 800px) {
+  .Welcome {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  
+}
+
+.Title h2{
+  color: green;
+  font-size: 16vh;
+  font-family: 'Crimson Pro';
+}
+
+@media (max-width: 800px) {
+  .Title h2{
+   color: green;
+   font-size: 8vh;
+   font-family: 'Crimson Pro';
+ }
+}
+
+p{
+  color: #212121;
+  font-size: 3vh;
+  font-family: 'Crimson Pro';
+}
+
+.site-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.HomeDetails iframe{
+  height: 60vh;
+  width: 60vw;
+}
+
+@media (max-width: 800px) {
+  .HomeDetails iframe{
+    height: 60vh;
+    width: 80vw;
+  }
+}
+
+@media (max-width: 880px) {
+  .site-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media(max-width: 800px){
+  .hideOnMobile{
+    display: none;
+  }
+  .menu-button{
+    display: block;
+  }
+}
+@media(max-width: 400px){
+  .sidebar{
+    width: 100%;
+  }
+}
+
+    </style>
+    <div class="header">
+      <div class="header-ui">
+        <nav>
+          <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Restaurant</a></li>
+            <li><a href="#">Waterpark</a></li>
+            <li><a href="#">Resort</a></li>
+            <li><a href="#">ContactUs</a></li>
+          </ul>
+          <ul>
+            <li><a href="#" class="Logo"><img src="../Logo/LOGO TAMNANPAR (L).png"></a></li>
+            <li class="hideOnMobile"><a href="#">Home</a></li>
+            <li class="hideOnMobile"><a href="#">Restaurant</a></li>
+            <li class="hideOnMobile"><a href="#">Waterpark</a></li>
+            <li class="hideOnMobile"><a href="#">Resort</a></li>
+            <li class="hideOnMobile"><a href="#">ContactUs</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 10vh;">
+    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+
+    <div class="site-content">
+      <div class="Welcome">
+        <div class="Title">
+          <h2>Tamnanpar</h2>
+        </div>
+        <div class="HomeDetails">
+          <iframe class="Tamnanpar-Video" src="https://www.youtube.com/embed/z52F9z4IhYE?controls=1">
+          </iframe>        
+          <p class="About">The thai mean of Tamnanpar is <b>"A Legend Of Forest" (绿光森林)</b>. It means green forest.</p>
+          <p class="About">When the sun shines on the green plants, it looks like a green forest.</p>
+          <p class="About">From enter to restaurant, there are all natural views when you walk pass, could not resist taking photos. Select favorite-seat sit down,</p>
+          <p class="About">neither next to waterfall or patio, enjoy a delicious thai meal, and a fresh cold coconut for lunch, immediately fresh up from tired and hot body.</p>
+          <p class="About">At night, romantic candle dinner and lovely singer singing english songs for you, what a wonderful moment!.</p>
+        </div>
+      </div>  
+    </div>
+    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 8vh;">
+    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+    <div class="site-content2">
+
+    </div>
+
+    <footer>
+      <div class="footer-grid" style="background-color: rgb(46, 46, 46); height: 100%;">
+        <div class="footer-nav">
+          <li><a href="#" class="Logo"><img src="../Logo/LOGO TAMNANPAR (L).png"></a></li>
+          <li class="hideOnMobile"><a href="#">Home</a></li>
+          <li class="hideOnMobile"><a href="#">Restaurant</a></li>
+          <li class="hideOnMobile"><a href="#">Waterpark</a></li>
+          <li class="hideOnMobile"><a href="#">Resort</a></li>
+          <li class="hideOnMobile"><a href="#">ContactUs</a></li>
+        </div>
+
+        <div class="footer-info">
+          <li><a class="address" href="https://www.google.com/maps/place/Tamnanpar+Resort/@12.6372542,101.4015809,17z/data=!4m13!1m2!2m1!1stamnanpar!3m9!1s0x3103016f0514699f:0x66988bbf81693c92!5m2!4m1!1i2!8m2!3d12.6382293!4d101.4039916!15sCgl0YW1uYW5wYXJaCyIJdGFtbmFucGFykgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tnspcss?entry=ttu">
+            167/6 หมู่ที่ 7 Sukhumvit Rd, Phe, Mueang Rayong District, Rayong 21160, Thailand</a></li>
+          <li><a class="ResortP" href="tel:006638928222">Resort Phone-Number: +66-38-928-222</a></li>
+          <li><a class="RestP" href="006638652884">Restaurant Phone-Number: +66-38-652-884</a></li>
+          <li><a class="email" href="mailto:tamnanpar.resort@gmail.com">Email: tamnanpar.resort@gmail.com</a></li>
+        </div>
+        <div class="footer-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.16392288446!2d101.40158087507082!3d12.637248937648272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310301692a79e125%3A0xf5e3e2158941269!2sTamnanpar!5e0!3m2!1sen!2snz!4v1720780176480!5m2!1sen!2snz" width="600" height="450" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="footer-social-media">
+
+        </div>
+      </div>
+    </footer>
+    </div> 
+        <!-- contact in footer will also include qr code, facebook, line, instagram, tiktok, phone numbers for resort, restaraunt number-->
+    
+    </body>
+    
+    <script>
+      function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+      }
+      function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+      }
+    </script>

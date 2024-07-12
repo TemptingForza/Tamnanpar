@@ -2,7 +2,7 @@
   /*Styles here are used for the main parts will need style form the test site to full function*/
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
 
@@ -58,17 +58,12 @@
 
   /*Home page Style*/
   .Welcome{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     text-align: center;
-    height: 100hv;
-  }
-
-  @media (max-width: 320px) {
-
   }
 
   .Title{
@@ -92,27 +87,29 @@
   /*Header is nav menu setting*/
 .header {
   position: fixed;
-  top: 0px;
+  top: 0%;
   width: 100%;
-  max-height: 17vh;
+  max-height: 12vh;
   background-color: rgba(21,21,21,0.7);
   align-items: center;
   z-index: 100;
 }
 
-.HomeDetails pre{
-
-}
-
+/*This is the home title and content style*/
 .Title h2 {
   color: green;
   font-size: 10vh;
   font-family: 'Crimson Pro';
 }
 
-.nav-link a{
-  font-size: 200%;
+.About p{
+  color: #212121;
+  font-size: 5vh;
+  font-family: 'Crimson Pro';
 }
+
+/*This is the home title and content style end*/
+
 
 .Logo{
  max-height: 18%;
@@ -126,22 +123,36 @@
 }
 
 .header-ui{
+  margin-top: 0%;
   display: flex;
 }
 
 nav{
   list-style-type: none;
-  display: flex;
-  justify-content: space-between; /* Align items to the right */
+  display: flex;/* Align items to the right */
   align-items: center;
   padding: 0;
   margin: 0%;
 
 }
 
+nav ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li{
+  height: 5vh;
+}
+
 nav a{
+  display: flex;
   position: relative;
-  font-size: 18px;
+  align-items: center;
+  font-size: 1.8vh;
   color: whitesmoke;
   font-weight: 500;
   text-decoration: none;
@@ -154,7 +165,7 @@ nav a::before{
   top: 80%;
   left: 0;
   width: 0;
-  height: 2px;
+  height: 0.2vh;
   background: #fff;
 }
 
@@ -190,7 +201,7 @@ nav a:hover::before{
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 10px;
     opacity: 1;
@@ -207,7 +218,7 @@ nav a:hover::before{
 
   .ResortRoom {
     width: 100%;
-    height: 100%;
+    height: 42.2vh;
     position: relative;
   }
 
@@ -229,144 +240,61 @@ nav a:hover::before{
   .link-text:hover {
     color: purple;
     text-decoration: underline;
-    font-size: 120%;
+    font-size: 110%;
     transition: 0.5s;
   }
 
+  @media (min-width: 800px) {
+    .ratio-content img{
+      width: 32.5vw; 
+      height: 42vh;
+    }  
+  }
   
-
-  @media (min-width: 1600px) {
+  @media (min-width: 800px) {
     .row-flex-content-rooms{
       display: grid;
-      grid-template-columns: 4, 1fr;
-      grid-template-rows: 3, 1fr;
-      margin-left: 10px;
-      margin-right: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      margin-left: 1vw;
+      margin-right: 1vh;
       gap: 10px;
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (max-width: 799px) {
     .row-flex-content-rooms{
       display: grid;
-      grid-template-columns: 4, 1fr;
-      grid-template-rows:3, 1fr;
-      margin-left: 10px;
-      margin-right: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      margin-left: 1vw;
+      margin-right: 1vh;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 799px) {
+    .ratio-content img{
+      width: 100%; 
+      height: 42vh;
+    }   
+  }
+
+  @media (max-width: 480px) {
+    .row-flex-content-rooms{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      margin-left: 1vw;
+      margin-right: 1vh;
       gap: 10px;
     }
   }
   /*Used for rooms to make grid*/
 
-
-
-
-
-  .language-selector {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    width: 100px; /* Set the desired width */
-    max-width: 150px; /* Set a maximum width */
-  }
-  
-  #languageSelect {
-    padding: 5px;
-    font-size: 14px;
-  }
-  
-  
-  /*old drop*/
-  label {
-    font-weight: bold;
-    background-size: 30px; /* Set the size of the flag image */
-    background-repeat: no-repeat;
-    position: fixed;
-    right:90%;
-    margin-top: -100px;
-    background-repeat: no-repeat;
-}
-
-select {
-  padding: 8px;
-  font-size: 16px;
-  width: 100px; /* Set the desired width */
-  max-width: 150px; /* Set a maximum width */
-  top: 0;
-  right: 0;
-  margin-top: 40px; /* Adjust the margin as needed */
-  margin-right: 10px; /* Adjust the margin as needed */
-}
-
-/* Move the dropdown to the far left */
-#languageDropdownContainer {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
-}
-
-option {
-  width: 50px;
-  height: 40px;
-  right: 90%;
-  margin-top: -100px;
-}
-
-
-/*dropdown*/
-.language {
-    display: inline-block;
-    margin-top: -5%;
-}
-
-.dropbtn {
-    background-color: transparent;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    background-image: url(lan/flag_thailand.png);
-    background-size: 30px; /* Set the size of the flag image */
-    background-repeat: no-repeat;
-    background-position: 10px 50%; /* Adjust the position of the flag image */
-    position: absolute; /* Make room for the flag image */
-    left: 90%;
-    margin-top: -100px;
-    width: 50px;
-    height: 40px;
-}
-
-.dropdown-content {
-    display: none;
-    background-color: #f9f9f9;
-    min-width: 16px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    bottom: 40px;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black; 
-
-}
-
-.dropdown-content a:hover {
-    background-color: whitesmoke;
-}
-
-.custom-dropdown:hover .dropdown-content {
-    display: block;
-}
-/*language drop downmenu*/
-
-
 #footer {
   background-color: rgb(20,20,20);
-  position: fixed; /* change from absolute to fixed */
+  position: relative; /* change from absolute to fixed */
   bottom: 0; /* position the footer at the bottom of the viewport */
   width: 100%;
   height: 6%;
@@ -394,6 +322,9 @@ option {
       
     /*Resort page Style*/
     .site-content{
+      justify-content: center;
+      align-items: center;
+      position: relative;
       background-color:rgb(214, 199, 199);
     }
 
@@ -403,157 +334,9 @@ option {
 
     .resort-intro-info p{
       text-align: center;
-      font-size: 18px;
+      font-size: 1.8vh;
       font-family: "Poppins", sans-serif;
     }
-
-    .column{
-      margin-left: 6%;
-      margin-right: 6%;
-    }
-
-    .row{
-      grid-template-columns: auto auto auto auto; /* 3 columns */
-    }
-
-    .ration-content{
-      position: absolute;
-    }
-
-
-    .AllRooms{
-      position: absolute;
-      flex-wrap: wrap;
-      width: 120%; /* set a specific width */
-      margin-left: 2%; /* use margins to center the box row */
-      justify-content: space-evenly;
-      border-radius: 10px;
-      grid-template-rows: repeat(10, 1fr);
-    }
-  
-    .Rooms {
-      width: calc(80% - 10px);
-      height: 500px;
-      margin-top: 170px;
-      margin-bottom: 100px;/*spaced from the bottom*/
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
-    }
-  
-    .Rooms img {
-      width: 350%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-      flex: 1 0 80%;
-    }
-  
-    .description {
-      width: calc(120% - 1em);
-      padding-left: 20px;
-      float: right;
-    }
-  
-    * {box-sizing: border-box}
-  .mySlides1, .mySlides2 {display: flex}
-  img {vertical-align: middle;}
-  
-  /* Slideshow container max width was 44rem*/
-  .slideshow-container {
-    max-width: 800px; 
-    max-height: 600px;
-    min-width: 700px;
-    min-height: 500px;
-    position: relative;
-    margin: 0 auto;
-  }
-  
-  .Slides{
-    margin-top: 7%;
-    margin-bottom: 7%;
-  }
-  
-  .Slides img{
-    position:absolute;
-    border-radius: 10px;
-  }
-  
-  .Slides p{
-    text-align: center;
-  }
-  
-  .roomtypes{
-    display: flex;
-    position: relative;
-    max-height: 600px;
-    min-height: 450px;
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 40px;
-  }
-  
-  .navbutton{
-    max-height: 400px;
-    max-width: 800px;
-    min-height: 400px;
-    min-width: 400px;
-  }
-  
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 55%;
-    width: auto;
-    padding: 16px;
-    margin-top: -30px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a grey background color */
-  .prev:hover, .next:hover {
-    background-color: #f1f1f1;
-    color: black;
-  }
-  
-  .description{
-    text-align: center;
-    background-color: rgb(214, 199, 199);/*The color needs to bbe the background colour*/
-  }
-  
-  .description button{
-    cursor: pointer;
-    margin-top: 30%;
-    border-radius: 5px;
-    border-style: solid;
-    min-width: 80px;
-    min-height: 40px;
-    border-color: forestgreen;
-    background-color: lightblue;
-    transition: 0.4s;
-  }
-  
-  .description button:hover{
-    color: white;
-    margin-top: 28%;
-    background-color: forestgreen;
-    min-width: 100px;
-    min-height: 60px;
-    font-weight: bold;
-  }
-  /*Resort page Style*/
-       
     
     .active {
       background-color: #717171;
@@ -566,9 +349,8 @@ option {
       display: flex;
       justify-content: center;
       flex-direction: column;
-
       font-family: "Poppins", sans-serif;
-      font-size: 12px;
+      font-size: 1.2vh;
       color: #5DB435;
       background-color: rgb(209, 203, 203);
     }
@@ -577,12 +359,6 @@ option {
     p{
       color: #212121;
       font-size: 15px;
-    }
-
-    pre{
-      color: #212121;
-      font-size: 30px;
-      font-family: 'Crimson Pro';
     }
 
     /*Restaurant page Style*/
