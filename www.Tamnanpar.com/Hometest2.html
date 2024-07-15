@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
-        <link href='https://fonts.googleapis.com/css?family=Crimson Pro' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css2?family=Caveat&display=swap' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
     <script src="../Scripts/Sidebar.js"></script>
     <body>
@@ -15,6 +16,7 @@
         }
         body{
             min-height: 100vh;
+            font-family: 'Caveat', cursive;
         }
         
         /*nav styles*/
@@ -25,7 +27,7 @@
         }
         nav ul{
             position: fixed;
-            background-color:rgba(21,21,21,0.7);
+            background-color:rgba(21,21,21,0.8);
             width: 100%;
             height: 10vh;
             list-style: none;
@@ -80,7 +82,7 @@
             right: 0;
             height: 100vh;
             width: 250px;
-            background-color: rgba(46, 46, 46, 0.089);
+            background-color:rgba(21,21,21,0.7);
             backdrop-filter: blur(5px);
             box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
             list-style: none;
@@ -125,23 +127,48 @@
             max-height: 10vh;
         }
         /*nav styles end*/
+
         /*site-content styles*/
         .site-content{
             display: flex;
             justify-content: center;
-            align-items: center;
             flex-direction: column;
             text-align: center;
             background-image: url(../Images/RestaurantPath.jpg); 
             background-size: 100%;
+            background-attachment: fixed;
         }
-        .title h2{
+        @media (max-width: 1140px) {
+            .site-content{
+                background-attachment: scroll;
+            }  
+        }
+        .welcome{
+            background-color: aliceblue; 
+            width: 100%;
+            box-shadow: 0px -3px 5px rgba(0, 0, 0, 1), /* Top shadow */
+            0px 3px 5px rgba(0, 0, 0, 1);/*Bottom shadow*/
+        }
+        .title{
+            justify-content: center;
+        }
+        h2{
             color: green;
-            font-size: 16vh;
-            font-family: 'Crimson Pro';
+            font-size: 14vh;
+            font-family: 'Caveat', cursive;
+        }
+        h1{
+            color: green;
+            font-size: 7vh;
+            font-family: 'Caveat', cursive;
+        }
+        .title p{
+            color: rgba(218, 165, 32, 1);
+            font-size: 6vh;
+            font-family: 'Caveat', cursive;
         }
         @media (max-width: 570px) {
-            .title h2{
+            h2{
                 font-size: 8vh;
             }
         }
@@ -158,8 +185,23 @@
         .homeDetails p{
             color: #212121;
             font-size: 3vh;
-            font-family: 'Crimson Pro';
+            font-family: 'Roboto', sans-serif;
         }
+
+        .restaurant-content{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .restaurant-title h1{
+            color: rgba(218, 165, 32, 1);
+            text-shadow: 0px -3px 5px rgba(0, 0, 0, 1), /* Top shadow */
+            0px 3px 5px rgba(0, 0, 0, 0.7);  /* Bottom shadow */
+        }
+        /*site-content end*/
+
+        /*Footer styles*/
         .logo-foot{
             max-height: 8vh;
         }
@@ -177,10 +219,28 @@
         .footer-grid{
             display: flex;
             justify-content: space-evenly;
-            margin-right: 20px;
+        }
+        @media (max-width: 800px) {
+            .footer-grid{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }   
         }
         .footer-logo {
             list-style: none;
+        }
+        .footer-social{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        .footer-social li{
+            padding: 0.5vw;
+        }
+        .footer-social img{
+            max-height: 4vh;
         }
         .footer-nav {
             list-style: none;
@@ -221,6 +281,7 @@
             color: whitesmoke;
             text-decoration: none;
         }
+        /*Footer styles end*/
 
         </style>
         <div header>
@@ -250,12 +311,14 @@
         <div class="site-content">
             <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 25vh;">
             </div><!--module-room-stripe this is to have a gap between intro and rooms-->
-            <div class="welcome" style="background-color: aliceblue; width: 100%;">
+            <div class="welcome">
                 <div class="title">
-                    <h2>Tamnapar</h2>
+                    <h2>Welcome</h2>
+                    <h1>to</h1>
+                    <p>Tamnapar </p>
                 </div>
                 <div class="homeDetails">
-                    <iframe class="tamnanpar-Video" src="https://www.youtube.com/embed/z52F9z4IhYE?controls=1">
+                    <iframe class="tamnanpar-Video" src="https://www.youtube-nocookie.com/embed/z52F9z4IhYE?controls=1">
                     </iframe>
                     <p class="about">The thai mean of Tamnanpar is <b>"A Legend Of Forest" (绿光森林)</b>. It means green forest.</p>
                     <p class="about">When the sun shines on the green plants, it looks like a green forest.</p>
@@ -266,9 +329,15 @@
                 <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 8vh;">
                 </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
             </div>
-        </div>
-        <div class="restaraunt-content">
-
+            <div class="restaurant-content">
+                <div class="restaurant-title">
+                    <h1>Restaurant</h1>
+                </div>
+                <div class="restaurant-details">
+                    <p></p>
+                </div>
+    
+            </div>
         </div>
         <footer>
             <div class="footer-content">
@@ -277,6 +346,13 @@
                 <div class="footer-grid">
                     <div class="footer-logo">
                         <li><a href="#" class="logo-foot"><img src="../Logo/LOGO TAMNANPAR (L).png"></a></li>
+                    </div>
+                    <div class="footer-social">
+                        <!--Will need to check if there is any legal issues could be need to give credit or pay for it-->
+                        <li><a href="#" class="faceb"><img src="../Images/Social-media/317746_facebook_social media_social_icon.png"></a></li>
+                        <li><a href="#" class="insta"><img src="../Images/Social-media/2993766_instagram_social media_icon.png"></a></li>
+                        <li><a href="#" class="line"><img src="../Images/Social-media/8010435_line_message_conversation_communication_chat_icon.png"></a></li>
+                        <li><a href="#" class="tictok"><img src="../Images/Social-media/4362958_tiktok_logo_social media_icon.png"></a></li>
                     </div>
                     <div class="footer-info">
                         <li><a class="address" href="https://www.google.com/maps/place/Tamnanpar+Resort/@12.6372542,101.4015809,17z/data=!4m13!1m2!2m1!1stamnanpar!3m9!1s0x3103016f0514699f:0x66988bbf81693c92!5m2!4m1!1i2!8m2!3d12.6382293!4d101.4039916!15sCgl0YW1uYW5wYXJaCyIJdGFtbmFucGFykgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tnspcss?entry=ttu">
