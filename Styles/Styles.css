@@ -1,420 +1,254 @@
-*{
+* {
   /*Styles here are used for the main parts will need style form the test site to full function*/
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-
-  /* Contact us popup */
-  #contact-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-  }
-  #contact-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50%;
-    height: 50%;
-    transform: translate(-50%, -50%);
-    background-color: aliceblue;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  #close-contact {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
-  #close-contact {
-    cursor: pointer;
-    border-radius: 20px;
-    border-style: solid;
-    min-width: 28px;
-    min-height: 28px;
-    margin-left: 98.5%;
-    margin-top: 1%;
-    border-color: forestgreen;
-    background-color: lightblue;
-    transition: 0.4s;
-  }
-  #close-contact:hover {
-    color: white;
-    background-color: forestgreen;
-    min-width: 33px;
-    min-height: 33px;
-    margin-top: 0.5%;
-    font-weight: bold;
-  }
-
-  /*Home page Style*/
-  .Welcome{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-  }
-
-  .Title{
-    margin-bottom: 2vh;
-  }
-  .HomeDetails{
-    margin-bottom: 2vh;
-  }
-  .ImageSlider{
-    background-color: green;
-  }
-  .TamImage{
-   display: flex;
-  }
-  .TamImage div img{
-    width: 100%;
-    height:300px;
-  }
-  /*Home page Style*/
-
-  /*Header is nav menu setting*/
-.header {
-  position: fixed;
-  top: 0%;
-  width: 100%;
-  max-height: 12vh;
-  background-color: rgba(21,21,21,0.7);
-  align-items: center;
-  z-index: 100;
-}
-
-/*This is the home title and content style*/
-.Title h2 {
-  color: green;
-  font-size: 10vh;
-  font-family: 'Crimson Pro';
-}
-
-.About p{
-  color: #212121;
-  font-size: 5vh;
-  font-family: 'Crimson Pro';
-}
-
-/*This is the home title and content style end*/
-
-
-.Logo{
- max-height: 18%;
- object-fit: cover;
-}
-
-.header .Logo img{
-  margin-top: 0vh;
-  max-width: auto;
-  max-height: 10vh;
-}
-
-.header-ui{
-  margin-top: 0%;
-  display: flex;
-}
-
-nav{
-  list-style-type: none;
-  display: flex;/* Align items to the right */
-  align-items: center;
+  margin: 0;
   padding: 0;
-  margin: 0%;
-
 }
 
-nav ul{
-  width: 100%;
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-nav li{
-  height: 5vh;
-}
-
-nav a{
-  display: flex;
-  position: relative;
-  align-items: center;
-  font-size: 1.8vh;
-  color: whitesmoke;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-}
-
-nav a::before{
-  content: '';
-  position: absolute;
-  top: 80%;
+/* Contact us popup */
+#contact-container {
+  display: none;
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 0;
-  height: 0.2vh;
-  background: #fff;
-}
-
-nav a:hover::before{
   width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+#contact-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#close-contact {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+#close-contact {
+  cursor: pointer;
+  border-radius: 20px;
+  border-style: solid;
+  min-width: 28px;
+  min-height: 28px;
+  margin-left: 98.5%;
+  margin-top: 1%;
+  border-color: forestgreen;
+  background-color: lightblue;
+  transition: 0.4s;
+}
+#close-contact:hover {
+  color: white;
+  background-color: forestgreen;
+  min-width: 33px;
+  min-height: 33px;
+  margin-top: 0.5%;
+  font-weight: bold;
 }
 
-.Tamnanpar-Video{
+/*Used for rooms to make grid*/
+.ration-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.content-info-text {
+  margin-top: 5px;
+}
+
+.content-info-text p {
+  color: rgba(218, 165, 32, 0.76);
+}
+
+.ResortRoom {
+  width: 100%;
+  height: 42.2vh;
+  position: relative;
+}
+
+.ResortRoom:hover .content-info {
+  opacity: 1;
+}
+
+.grid-rooms {
+  width: 100%;
+  height: 100%;
+}
+
+.link-text {
+  color: forestgreen;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.link-text:hover {
+  color: purple;
+  text-decoration: underline;
+  font-size: 110%;
+  transition: 0.5s;
+}
+
+@media (min-width: 800px) {
+  .ratio-content img {
+    width: 32.5vw;
+    height: 42vh;
+  }
+}
+
+@media (min-width: 800px) {
+  .row-flex-content-rooms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin-left: 1vw;
+    margin-right: 1vh;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 799px) {
+  .row-flex-content-rooms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin-left: 1vw;
+    margin-right: 1vh;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 799px) {
+  .ratio-content img {
+    width: 100%;
+    height: 42vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .row-flex-content-rooms {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    margin-left: 1vw;
+    margin-right: 1vh;
+    gap: 10px;
+  }
+}
+/*Used for rooms to make grid*/
+
+/*Resort page Style*/
+.site-content {
+  justify-content: center;
   align-items: center;
-  width: 80%; 
-  height: 300px; 
+  position: relative;
+  background-color: rgb(214, 199, 199);
 }
 
-@media (min-width: 430px){
-  .Tamnanpar-Video {
-    align-items: center;
-    width: 80%; 
-    height: 50%; 
-  }  
+.resort-intro-content {
+  margin-top: 7%;
 }
-/*End of header and video styles*/
 
-
-  /*Used for rooms to make grid*/
-  .ration-content img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .content-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    opacity: 1;
-    transition: opacity 0.3s;
-  }
-
-  .content-info-text {
-    margin-top: 5px;
-  }
-
-  .content-info-text p {
-    color: rgba(218, 165, 32, 0.76);
-  }
-
-  .ResortRoom {
-    width: 100%;
-    height: 42.2vh;
-    position: relative;
-  }
-
-  .ResortRoom:hover .content-info {
-    opacity: 1;
-  }
-
-  .grid-rooms {
-    width: 100%;
-    height: 100%;
-  }
-
-  .link-text {
-    color: forestgreen;
-    font-style: italic;
-    text-decoration: none;
-  }
-
-  .link-text:hover {
-    color: purple;
-    text-decoration: underline;
-    font-size: 110%;
-    transition: 0.5s;
-  }
-
-  @media (min-width: 800px) {
-    .ratio-content img{
-      width: 32.5vw; 
-      height: 42vh;
-    }  
-  }
-  
-  @media (min-width: 800px) {
-    .row-flex-content-rooms{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      margin-left: 1vw;
-      margin-right: 1vh;
-      gap: 10px;
-    }
-  }
-
-  @media (max-width: 799px) {
-    .row-flex-content-rooms{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(5, 1fr);
-      margin-left: 1vw;
-      margin-right: 1vh;
-      gap: 10px;
-    }
-  }
-
-  @media (max-width: 799px) {
-    .ratio-content img{
-      width: 100%; 
-      height: 42vh;
-    }   
-  }
-
-  @media (max-width: 480px) {
-    .row-flex-content-rooms{
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(10, 1fr);
-      margin-left: 1vw;
-      margin-right: 1vh;
-      gap: 10px;
-    }
-  }
-  /*Used for rooms to make grid*/
-
-#footer {
-  background-color: rgb(20,20,20);
-  position: relative; /* change from absolute to fixed */
-  bottom: 0; /* position the footer at the bottom of the viewport */
-  width: 100%;
-  height: 6%;
-  }
-
-  #footer a {
-    float: left;
-    display: flex;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: "Poppins", sans-serif;
+.resort-intro-info p {
+  text-align: center;
+  font-size: 1.8vh;
+  font-family: "Poppins", sans-serif;
 }
-    
-    
-    
-    #footer a:hover {
-            background-color:white;
-            color: #80e5ff;
-        }
-    
 
-      
-    /*Resort page Style*/
-    .site-content{
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      background-color:rgb(214, 199, 199);
-    }
+.active {
+  background-color: #717171;
+}
 
-    .resort-intro-content{
-      margin-top: 7%;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2vh;
+  color: #5db435;
+  background-color: rgb(209, 203, 203);
+}
 
-    .resort-intro-info p{
-      text-align: center;
-      font-size: 1.8vh;
-      font-family: "Poppins", sans-serif;
-    }
-    
-    .active {
-      background-color: #717171;
-    }
-    
-    body{
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      font-family: "Poppins", sans-serif;
-      font-size: 1.2vh;
-      color: #5DB435;
-      background-color: rgb(209, 203, 203);
-    }
+p {
+  color: #212121;
+  font-size: 15px;
+}
 
+/*Restaurant page Style*/
+.AboutR {
+  margin-top: 8%;
+}
+.Restaur {
+  margin-top: 8%;
+  margin-left: 2%;
+}
+.Restaur img {
+  width: 790px;
+  height: 695px;
+  margin-right: 25px;
+  border-radius: 20px;
+  float: right; /*Use to make text and img to go side by side*/
+}
+.AboutRS button {
+  cursor: pointer;
+  margin-left: 65px;
+  border-radius: 5px;
+  border-style: solid;
+  min-width: 80px;
+  min-height: 40px;
+  border-color: forestgreen;
+  background-color: lightblue;
+  transition: 0.4s;
+  margin-bottom: 5%;
+}
+.AboutRS button:hover {
+  color: white;
+  background-color: forestgreen;
+  margin-top: -10px;
+  margin-left: 55px;
+  min-width: 100px;
+  min-height: 60px;
+  font-weight: bold;
+}
 
-    p{
-      color: #212121;
-      font-size: 15px;
-    }
+/*Restaurant page Style*/
 
-    /*Restaurant page Style*/
-    .AboutR{
-      margin-top: 8%;
-    }
-    .Restaur{
-      margin-top: 8%;
-      margin-left: 2%;
-    }
-    .Restaur img{
-      width: 790px;
-      height: 695px;
-      margin-right: 25px;
-      border-radius: 20px;
-      float: right; /*Use to make text and img to go side by side*/
-    }
-    .AboutRS button{
-      cursor: pointer;
-      margin-left: 65px;
-      border-radius: 5px;
-      border-style: solid;
-      min-width: 80px;
-      min-height: 40px;
-      border-color: forestgreen;
-      background-color: lightblue;
-      transition: 0.4s;
-      margin-bottom: 5%;
-    }
-    .AboutRS button:hover{
-      color: white;
-      background-color: forestgreen;
-      margin-top: -10px;
-      margin-left: 55px;
-      min-width: 100px;
-      min-height: 60px;
-      font-weight: bold;
-    }
-    
+/*Waterpark page Style*/
+.AboutWP {
+  margin-top: 8%;
+}
+.WPImg {
+  margin-left: 2%;
+}
+.WPImg img {
+  width: 800px;
+  height: 725px;
+  float: left;
+  border-radius: 20px;
+}
+/*Waterpark page Style*/
 
-    /*Restaurant page Style*/
-
-    /*Waterpark page Style*/
-    .AboutWP{
-      margin-top: 8%;
-    }
-    .WPImg{
-      margin-left: 2%;
-    }
-    .WPImg img{
-      width: 800px;
-      height: 725px;
-      float:left;
-      border-radius: 20px;
-    }
-    /*Waterpark page Style*/
-
-    /*Contact Us Popup*/
-    
+/*Contact Us Popup*/

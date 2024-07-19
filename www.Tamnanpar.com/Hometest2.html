@@ -6,377 +6,10 @@
         <title>Home</title>
         <link href='https://fonts.googleapis.com/css2?family=Caveat&display=swap' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../Styles/Tamanpar.css"> 
     </head>
     <script src="../Scripts/Sidebar.js"></script>
     <body>
-        <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            min-height: 100vh;
-            font-family: 'Caveat', cursive;
-        }
-        
-        /*nav styles*/
-        nav{
-            max-height: 300px;
-            background-color:rgba(21, 21, 21, 0.89);
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
-        nav ul{
-            position: fixed;
-            background-color:rgba(21,21,21,0.8);
-            width: 100%;
-            height: 100px;
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            z-index: 10;
-        }
-        @media (max-width: 1600px){
-            nav ul{
-                position: fixed;
-                background-color:rgba(21,21,21,0.7);
-                width: 100%;
-                height: 100px;
-                padding: 1vh 1vw;
-                list-style: none;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                z-index: 10;
-            }
-        }
-        nav li{
-            height: 50px;
-        }
-        nav a{
-            height: 100%;
-            padding: 0 30px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            color: whitesmoke;
-            z-index: 10;
-        }
-        .sidebar a{
-            font-size: 25px;
-            font-style: "Poppins", sans-serif;
-        }
-        .hideOnMobile a{
-            font-size: 25px;
-            font-style: "Poppins", sans-serif;
-        }
-        ul .hideOnMobile a:hover{
-            background-color: #807e7e;
-        }
-        nav .Logo a:hover{
-            background-color: rgba(21,21,21,0.7);
-        }
-        nav li:first-child{
-            margin-right: auto;
-        }
-        .sidebar{
-            position: fixed;
-            top: 0; 
-            right: 0;
-            height: 100vh;
-            width: 250px;
-            background-color:rgba(21,21,21,0.7);
-            backdrop-filter: blur(5px);
-            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-            list-style: none;
-            display: none;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-start;
-            z-index: 50;
-        }
-        .sidebar li{
-            margin-top: 2.5vh;
-            width: 100%;
-        }
-        .sidebar a{
-            width: 100%;
-        }
-        .menu-button{
-            display: none;
-        }
-        .menu-button .path{
-            color: whitesmoke;
-        }
-        @media(max-width: 880px){
-            .hideOnMobile{
-                display: none;
-            }
-            .menu-button{
-                display: block;
-            }
-        }
-        @media(max-width: 400px){
-            .sidebar{
-                width: 100%;
-            }
-        }
-        .Logo{
-            max-height: 80px;
-        }
-        .Logo img{
-            margin-top: 0vh;
-            max-width: auto;
-            max-height: 100px;
-        }
-        @media (max-height: 480px) {
-            nav ul{
-                height: 60px;
-            }
-            .Logo{
-                max-height: 60px;
-            }
-            .Logo img{
-                margin-top: 0vh;
-                max-width: auto;
-                max-height: 60px;
-            }
-        }
-        /*nav styles end*/
-
-        /*site-content styles*/
-        .site-content{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            background-size: 100%;
-            background-attachment: fixed;
-        }
-        @media (max-width: 1140px) {
-            .site-content{
-                background-attachment: scroll;
-            }  
-        }
-        .welcome{
-            background-color: aliceblue; 
-            width: 100%;
-            box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.7), /* Top shadow */
-            0px 3px 5px rgba(0, 0, 0, 0.7);/*Bottom shadow*/
-        }
-        .title{
-            justify-content: center;
-        }
-        h2{
-            color: green;
-            font-size: 140px;
-            font-family: 'Caveat', cursive;
-        }
-        h1{
-            color: green;
-            font-size: 60px;
-            font-family: 'Caveat', cursive;
-        }
-        .title p{
-            color: rgba(218, 165, 32, 1);
-            font-size: 60px;
-            font-family: 'Caveat', cursive;
-        }
-        @media (max-width: 570px) {
-            h2{
-                font-size: 8vh;
-            }
-        }
-        .homeDetails iframe{
-            height: 60vh;
-            width: 60vw;
-        }
-        @media (max-width: 800px) {
-            .homeDetails iframe{
-                height: 60vh;
-                width: 80vw;
-            }
-        }
-        .homeDetails p{
-            color: #212121;
-            font-size: 15px;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        /*Restauraunt in home styles*/
-        .contents{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
-        .titles{
-            height: 200px;
-            align-content: center;
-        }
-        .titles img{
-            max-height: 100px; 
-            filter: drop-shadow(3px 3px 5px rgba(0,0,0,1));
-            z-index: 1;
-        }
-        .titles h1{
-            color: rgba(218, 165, 32, 1);
-            text-shadow: 0px -3px 5px rgba(0, 0, 0, 1), /* Top shadow */
-            0px 3px 5px rgba(0, 0, 0, 1);  /* Bottom shadow */
-        }
-        .details{
-            background-color: aliceblue;
-            height: 100%;
-            box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.7), /* Top shadow */
-            0px 3px 5px rgba(0, 0, 0, 0.7);/*Bottom shadow*/
-        }
-        .details p{
-            color: #212121;
-            font-size: 15px;
-            font-family: 'Roboto', sans-serif;
-        }
-        .homeimages{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-        
-        .homeimages img{
-            width: 30vw;
-        }
-        @media (max-width: 800px) {
-            .homeimages{
-                flex-direction: column;
-            }
-            .homeimages img{
-                padding-top: 10px;
-                width: 100%;
-            }
-        }
-        /*Restauraunt styles in home end*/
-        /*Rooms styles in home*/
-        .room-opt{
-            display: flex; 
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-        .room-images-container img{
-            width: 30vw;
-        }
-        @media (max-width: 800px) {
-            .room-images-container img{
-                width: 100%;
-            }
-        }
-        @media (max-width: 800px) {
-            .room-opt{
-                display: flex; 
-                flex-direction: column;
-                justify-content: space-evenly;
-            }
-        }
-        /*Rooms styles in home end*/
-        /*location style start*/
-        .details iframe{
-            width: 80%;
-        }
-        /*site-content end*/
-
-        /*Footer styles*/
-        .logo-foot{
-            max-height: 8vh;
-        }
-
-        .logo-foot img{
-            margin-top: 0vh;
-            max-width: auto;
-            max-height: 100px;
-        }
-        footer{
-            background-color: rgb(46, 46, 46); 
-            height: 100%;
-            width: 100%;
-        }
-        .footer-grid{
-            display: flex;
-            justify-content: space-evenly;
-        }
-        @media (max-width: 800px) {
-            .footer-grid{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }   
-        }
-        .footer-logo {
-            list-style: none;
-        }
-        .footer-social{
-            display: flex;
-            flex-direction: row;
-            list-style: none;
-        }
-        .footer-social li{
-            padding: 0.3vw;
-        }
-        .footer-social img{
-            max-height: 40px;
-        }
-        .footer-nav {
-            list-style: none;
-            margin-right: auto;
-        }
-        .footer-nav a{
-            font-style: "Poppins", sans-serif;
-            font-size: 20px;
-            color: whitesmoke;
-            text-decoration: underline;
-        }
-        .footer-nav a:hover{
-            color: rgba(218, 165, 32, 0.76);
-        }
-
-
-        .footer-nav li{
-            padding-top: 0vh;
-            padding-bottom: 0.5vh;
-        }
-        .footer-info {
-            list-style: none;
-            padding-right: 1.5vw;
-        }
-        .footer-info a{
-            font-style: "Poppins", sans-serif;
-            font-size: 20px;
-            color: whitesmoke;
-            text-decoration: underline;
-        }
-        .footer-info a:hover{
-            font-style: "Poppins", sans-serif;
-            color: rgba(218, 165, 32, 0.76);
-        }
-        .footer-info p{
-            font-style: "Poppins", sans-serif;
-            font-size: 20px;
-            color: whitesmoke;
-            text-decoration: none;
-        }
-        .footer-info .privacy{
-            font-style: "Poppins", sans-serif;
-            font-size: 20px;
-            color: whitesmoke;
-            text-decoration: underline;
-        }
-        @media (max-width: 800px) {
-            .hideOnMobilefoot{
-                display: none;
-            }
-        }
-        /*Footer styles end*/
-
-        </style>
         <div header>
             <div class="header-ui">
                 <nav>
@@ -439,16 +72,18 @@
                         <p>Forest legend...living food park Created from the rice fields</p>
                         <p>It is a restaurant in a natural forest in the middle of Rayong city.</p>
                         <br>
-                        <p>Open for more than 20 years</p>
-                        <p>The restaurant was started at the end of the year.</p>
+                        <p>Open for more than 20 years
+                        <p>The restaurant was started at the end of the year.
                         <p>1997 during Tom Yum Kung Starting from liking nature of Mr. Chairat The president of the company</p>
                         <p>thinks that if you like it you must do it, you must preserve it, and awaken the spirits of people who love nature.</p>
-                        <p>love the environment So it was created from an empty rice field.</p>
+                        <p>love the environment So it was created from an empty rice field.
                         <p>Make it a forest Take unused raw materials such as scrap wood and decorate them beautifully, including trees, rocks, cliffs,</p>
-                        <p>fountains, and waterfalls, creating a perfectly complete ecosystem.</p>
-                        <p>In the restaurant section There are chefs who have been together for a long time, more than 20 years, living together as a family. </p>                        <p>Parents are chefs Since my children were little until today, I have grown up and come to work at the shop and never go anywhere. </p>
+                        <p>fountains, and waterfalls, creating a perfectly complete ecosystem.
+                        <p>In the restaurant section There are chefs who have been together for a long time, more than 20 years, living together as a family. </p>                        
+                        <p>Parents are chefs Since my children were little until today, I have grown up and come to work at the shop and never go anywhere. </p>
                         <p>Everyone has a spirit of love for nature.</p>
-                        <p>Take care of the environment Meticulous attention to every dish Focus on healthy menus Most of the ingredients come</p>                        <p>from surrounding communities, such as fishing communities that deliver seafood.</p>
+                        <p>Take care of the environment Meticulous attention to every dish Focus on healthy menus Most of the ingredients come</p>                        
+                        <p>from surrounding communities, such as fishing communities that deliver seafood.</p>
                         <p>Khao Sampaothong Community Also sends duck eggs, chicken eggs, plants.</p>
                         <br>
                     </div>
@@ -511,19 +146,19 @@
                             <div class="room-images-container">
                                 <img src="../RoomVariety/Deluxe-Twin/Deluxe Twin1.jpg">
                             </div>
-                            <button>Read More</button>
+                            <a href="#">Read More ></a>
                         </div>
                         <div class="roomgrid">
                             <div class="room-images-container">
                                 <img src="../RoomVariety/Cozy-King/Cozy King1.jpg">
                             </div>
-                            <button>Read More</button>
+                            <a href="#">Read More ></a>
                         </div>
                         <div class="roomgrid">
                             <div class="room-images-container">
                                 <img src="../RoomVariety/Poolside-King/Poolside 1.jpg">
                             </div>
-                            <button>Read More</button>
+                            <a href="#">Read More ></a>
                         </div>
                     </div>
                     <div class="view-buttons"></div>
@@ -540,7 +175,7 @@
                     <img src="../Logo/LOGO TAMNANPAR (L).png">
                     <h1>Our Location</h1>
                 </div>
-                <div class="details">
+                <div class="details" style="background-color: rgb(46, 46, 46);">
                     <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
                     </div><!--module-room-stripe this is to have a gap between intro and rooms-->
 
@@ -576,7 +211,7 @@
                             167/6 หมู่ที่ 7 Sukhumvit Rd, Phe, Mueang</a></li>
                         <li><a class="address" href="https://www.google.com/maps/place/Tamnanpar+Resort/@12.6372542,101.4015809,17z/data=!4m13!1m2!2m1!1stamnanpar!3m9!1s0x3103016f0514699f:0x66988bbf81693c92!5m2!4m1!1i2!8m2!3d12.6382293!4d101.4039916!15sCgl0YW1uYW5wYXJaCyIJdGFtbmFucGFykgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tnspcss?entry=ttu">
                             Rayong District, Rayong 21160, Thailand</a></li>
-                            <li><p>Restaurant Phone-Number: <a class="RestP" href="006638652884"> +66-38-652-884</a></p></li>
+                            <li><p>Restaurant Phone-Number: <a class="RestP" href="tel:006638652884"> +66-38-652-884</a></p></li>
                             <li><p>Resort Phone-Number: <a class="ResortP" href="tel:006638928222">+66-38-928-222</a></p></li>
                             <li><p>Email: <a class="email" href="mailto:tamnanpar.resort@gmail.com">tamnanpar.resort@gmail.com</a></p></li>
                             <li><a class="privacy" href="#"><b>Privacy Policy</b></a></li>

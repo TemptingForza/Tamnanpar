@@ -1,0 +1,376 @@
+/*Styles for responsive home page with nav, footer and others*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Caveat", cursive;
+}
+
+/*nav styles*/
+nav {
+  max-height: 300px;
+  background-color: rgba(21, 21, 21, 0.89);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+nav ul {
+  position: fixed;
+  background-color: rgba(21, 21, 21, 0.8);
+  width: 100%;
+  height: 100px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 10;
+}
+@media (max-width: 1600px) {
+  nav ul {
+    position: fixed;
+    background-color: rgba(21, 21, 21, 0.7);
+    width: 100%;
+    height: 100px;
+    padding: 1vh 1vw;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10;
+  }
+}
+nav li {
+  height: 50px;
+}
+nav a {
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+  z-index: 10;
+}
+.sidebar a {
+  font-size: 25px;
+  font-style: "Poppins", sans-serif;
+}
+.hideOnMobile a {
+  font-size: 25px;
+  font-style: "Poppins", sans-serif;
+}
+ul .hideOnMobile a:hover {
+  background-color: #807e7e;
+}
+nav .Logo a:hover {
+  background-color: rgba(21, 21, 21, 0.7);
+}
+nav li:first-child {
+  margin-right: auto;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(21, 21, 21, 0.7);
+  backdrop-filter: blur(5px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 50;
+}
+.sidebar li {
+  margin-top: 2.5vh;
+  width: 100%;
+}
+.sidebar a {
+  width: 100%;
+}
+.menu-button {
+  display: none;
+}
+.menu-button .path {
+  color: whitesmoke;
+}
+@media (max-width: 880px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.Logo {
+  max-height: 80px;
+}
+.Logo img {
+  margin-top: 0vh;
+  max-width: auto;
+  max-height: 100px;
+}
+@media (max-height: 480px) {
+  nav ul {
+    height: 60px;
+  }
+  .Logo {
+    max-height: 60px;
+  }
+  .Logo img {
+    margin-top: 0vh;
+    max-width: auto;
+    max-height: 60px;
+  }
+}
+/*nav styles end*/
+
+/*site-content styles*/
+.site-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+@media (max-width: 1140px) {
+  .site-content {
+    background-attachment: scroll;
+  }
+}
+.welcome {
+  background-color: aliceblue;
+  width: 100%;
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.7),
+    /* Top shadow */ 0px 3px 5px rgba(0, 0, 0, 0.7); /*Bottom shadow*/
+}
+.title {
+  justify-content: center;
+}
+h2 {
+  color: rgb(4, 158, 4);
+  font-size: 140px;
+  font-family: "Caveat", cursive;
+}
+h1 {
+  color: rgb(4, 158, 4);
+  font-size: 60px;
+  font-family: "Caveat", cursive;
+}
+.title p {
+  color: rgba(218, 165, 32, 1);
+  font-size: 60px;
+  font-family: "Caveat", cursive;
+}
+@media (max-width: 570px) {
+  h2 {
+    font-size: 8vh;
+  }
+}
+.homeDetails iframe {
+  height: 60vh;
+  width: 60vw;
+}
+@media (max-width: 800px) {
+  .homeDetails iframe {
+    height: 60vh;
+    width: 80vw;
+  }
+}
+.homeDetails p {
+  color: #212121;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Restauraunt in home styles*/
+.contents {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.titles {
+  height: 200px;
+  align-content: center;
+}
+.titles img {
+  max-height: 100px;
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
+  z-index: 1;
+}
+.titles h1 {
+  color: rgba(218, 165, 32, 1);
+  text-shadow: 0px -3px 5px rgba(0, 0, 0, 1),
+    /* Top shadow */ 0px 3px 5px rgba(0, 0, 0, 1); /* Bottom shadow */
+}
+.details {
+  background-color: aliceblue;
+  height: 100%;
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.7),
+    /* Top shadow */ 0px 3px 5px rgba(0, 0, 0, 0.7); /*Bottom shadow*/
+}
+.details p {
+  color: #212121;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+.homeimages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.homeimages img {
+  width: 30vw;
+}
+@media (max-width: 800px) {
+  .homeimages {
+    flex-direction: column;
+  }
+  .homeimages img {
+    padding-top: 10px;
+    width: 100%;
+  }
+}
+/*Restauraunt styles in home end*/
+/*Rooms styles in home*/
+.room-opt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.roomgrid a {
+  font-size: 25px;
+  color: rgb(4, 158, 4);
+}
+.roomgrid a:hover {
+  font-size: 25px;
+  color: rgba(218, 165, 32, 1);
+}
+.room-images-container img {
+  width: 30vw;
+}
+@media (max-width: 800px) {
+  .room-images-container img {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .room-opt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+/*Rooms styles in home end*/
+/*location style start*/
+.details iframe {
+  width: 80%;
+}
+/*site-content end*/
+
+/*Footer styles*/
+.logo-foot {
+  max-height: 8vh;
+}
+
+.logo-foot img {
+  margin-top: 0vh;
+  max-width: auto;
+  max-height: 100px;
+}
+footer {
+  background-color: rgb(46, 46, 46);
+  height: 100%;
+  width: 100%;
+}
+.footer-grid {
+  display: flex;
+  justify-content: space-evenly;
+}
+@media (max-width: 800px) {
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.footer-logo {
+  list-style: none;
+}
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.footer-social li {
+  padding: 0.3vw;
+}
+.footer-social img {
+  max-height: 40px;
+}
+.footer-nav {
+  list-style: none;
+  margin-right: auto;
+}
+.footer-nav a {
+  font-style: "Poppins", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+  text-decoration: underline;
+}
+.footer-nav a:hover {
+  color: rgba(218, 165, 32, 0.76);
+}
+
+.footer-nav li {
+  padding-top: 0vh;
+  padding-bottom: 0.5vh;
+}
+.footer-info {
+  list-style: none;
+  padding-right: 1.5vw;
+}
+.footer-info a {
+  font-style: "Poppins", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+  text-decoration: underline;
+}
+.footer-info a:hover {
+  font-style: "Poppins", sans-serif;
+  color: rgba(218, 165, 32, 0.76);
+}
+.footer-info p {
+  font-style: "Poppins", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+  text-decoration: none;
+}
+.footer-info .privacy {
+  font-style: "Poppins", sans-serif;
+  font-size: 20px;
+  color: whitesmoke;
+  text-decoration: underline;
+}
+@media (max-width: 800px) {
+  .hideOnMobilefoot {
+    display: none;
+  }
+}
+/*Footer styles end*/
+
+/*Styles for responsive home page with nav, footer and others end*/
