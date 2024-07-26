@@ -12,13 +12,13 @@ body {
 /*nav styles*/
 nav {
   max-height: 300px;
-  background-color: rgba(21, 21, 21, 0.89);
+  background-color: rgba(21, 21, 21, 1);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 nav ul {
   position: fixed;
-  background-color: rgba(21, 21, 21, 0.8);
+  background-color: rgba(21, 21, 21, 1);
   width: 100%;
   height: 100px;
   list-style: none;
@@ -30,7 +30,7 @@ nav ul {
 @media (max-width: 1600px) {
   nav ul {
     position: fixed;
-    background-color: rgba(21, 21, 21, 0.7);
+    background-color: rgba(21, 21, 21, 1);
     width: 100%;
     height: 100px;
     padding: 1vh 1vw;
@@ -62,10 +62,11 @@ nav a {
   font-style: "Poppins", sans-serif;
 }
 ul .hideOnMobile a:hover {
-  background-color: #807e7e;
+  background-color: #807e7e44;
+  text-decoration: underline;
 }
 nav .Logo a:hover {
-  background-color: rgba(21, 21, 21, 0.7);
+  background-color: rgba(21, 21, 21, 1);
 }
 nav li:first-child {
   margin-right: auto;
@@ -200,6 +201,7 @@ h1 {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  /*backdrop-filter: blur(4px);*/
 }
 .titles {
   height: 200px;
@@ -207,7 +209,7 @@ h1 {
 }
 .titles img {
   max-height: 100px;
-  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
+  filter: drop-shadow(3px 3px 5px rgb(0, 0, 0));
   z-index: 1;
 }
 .titles h1 {
@@ -251,11 +253,12 @@ h1 {
   flex-direction: row;
   justify-content: space-evenly;
 }
-.roomgrid a {
+.room-opt a {
   font-size: 25px;
   color: rgb(4, 158, 4);
+  text-decoration: none;
 }
-.roomgrid a:hover {
+.room-opt a:hover {
   font-size: 25px;
   color: rgba(218, 165, 32, 1);
 }
@@ -273,6 +276,32 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
   }
+}
+.conference-room a {
+  font-size: 25px;
+  color: rgb(4, 158, 4);
+}
+.conference-room a:hover {
+  font-size: 25px;
+  color: rgba(218, 165, 32, 1);
+}
+button {
+  background-color: #212121;
+  background-size: 100%;
+  color: rgba(218, 165, 32, 1);
+  border: 2px solid whitesmoke;
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-family: "Caveat", cursive;
+  font-size: 15px;
+  text-shadow: 0px -3px 5px rgba(0, 0, 0, 1),
+    /* Top shadow */ 0px 3px 5px rgba(0, 0, 0, 1); /* Bottom shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+button:hover {
+  transition: 0.3s;
+  font-size: 25px;
 }
 /*Rooms styles in home end*/
 /*location style start*/
@@ -293,8 +322,6 @@ h1 {
 }
 footer {
   background-color: rgb(46, 46, 46);
-  height: 100%;
-  width: 100%;
 }
 .footer-grid {
   display: flex;
@@ -327,7 +354,6 @@ footer {
   margin-right: auto;
 }
 .footer-nav a {
-  font-style: "Poppins", sans-serif;
   font-size: 20px;
   color: whitesmoke;
   text-decoration: underline;
@@ -344,24 +370,25 @@ footer {
   list-style: none;
   padding-right: 1.5vw;
 }
+@media (max-width: 800px) {
+  .footer-info {
+    text-align: center;
+  }
+}
 .footer-info a {
-  font-style: "Poppins", sans-serif;
   font-size: 20px;
   color: whitesmoke;
   text-decoration: underline;
 }
 .footer-info a:hover {
-  font-style: "Poppins", sans-serif;
   color: rgba(218, 165, 32, 0.76);
 }
 .footer-info p {
-  font-style: "Poppins", sans-serif;
   font-size: 20px;
   color: whitesmoke;
   text-decoration: none;
 }
 .footer-info .privacy {
-  font-style: "Poppins", sans-serif;
   font-size: 20px;
   color: whitesmoke;
   text-decoration: underline;
@@ -374,3 +401,51 @@ footer {
 /*Footer styles end*/
 
 /*Styles for responsive home page with nav, footer and others end*/
+
+/*Restaurant Style*/
+.restaraunt-dishes {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 760px) {
+  .restaraunt-dishes {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 760px) {
+  .restaraunt-dishes {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.dishesimg img {
+  width: 500px;
+}
+@media (max-width: 516px) {
+  .dishesimg img {
+    width: 300px;
+  }
+}
+.dish-description-right {
+  text-align: left;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+.dish-description-left {
+  text-align: left;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: black;
+  font-family: "Roboto", sans-serif;
+}
