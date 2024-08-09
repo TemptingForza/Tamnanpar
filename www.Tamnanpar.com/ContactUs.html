@@ -47,11 +47,11 @@
                     <div class="enter-contact">
                         <div class="contact-type"style="display: flex; justify-content: center">
                             <div class="phone-type" style="padding-right: 20px;">
-                                <input type="radio" id="contact-option">
+                                <input type="radio" id="contact-option" name="option">
                                 <span>Phone</span>
                             </div>
                             <div class="email-type">
-                                <input type="radio" id="contact-option">
+                                <input type="radio" id="contact-option" name="option">
                                 <span>Email</span>
                             </div>
                         </div>
@@ -72,11 +72,11 @@
                         <div class="input-contact-info" style="text-align: left; display: flex; justify-content: center">
                             <div class="Phone-Number" style="padding-right: 15px;">
                                 <p>Phone-Number</p>
-                                <input type="text" id="name-details" style="height: 25px; width: 240px;">
+                                <input autocomplete="tel" type="tel" id="name-details" style="height: 25px; width: 240px;">
                             </div>
                             <div class="Email-address">
                                 <p>Email</p>
-                                <input type="text" id="name-details" style="height: 25px;  width: 240px;">
+                                <input autocomplete="email" type="email" id="name-details" style="height: 25px;  width: 240px;">
                             </div>
                         </div>
                         <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 2vh;">
@@ -84,14 +84,15 @@
                         <div class="message">
                             <div class="message-info">
                                 <p>Message</p>
-                                <textarea class="form-input" name="comment" placeholder="" required="" id="form-input-uid-8-0" style="height: 120px; max-height: 300px; width: 500px; max-width: 500px;"></textarea>
+                                <textarea class="form-input" name="comment" placeholder="" required="" id="form-input-uid-8-0" style="height: 120px; max-height: 300px; width: 500px; min-width: 300px;"></textarea>
                             </div>
                         </div>
                         <div class="submit-message" style="padding-top: 2vh;">
                             <button>Submit Message</button>
                         </div>
                         <div class="other-contact" style="justify-content: center;">
-                            <p style="padding-top: 2vh;">You can also contact us through our social media account</p>
+                            <p style="padding-top: 2vh;">You can also contact us by phone and email</p>
+                            <br>
                             <div class="other-contact" style="justify-content: center;">
                                 <li><a class="address" href="https://www.google.com/maps/place/Tamnanpar+Resort/@12.6372542,101.4015809,17z/data=!4m13!1m2!2m1!1stamnanpar!3m9!1s0x3103016f0514699f:0x66988bbf81693c92!5m2!4m1!1i2!8m2!3d12.6382293!4d101.4039916!15sCgl0YW1uYW5wYXJaCyIJdGFtbmFucGFykgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tnspcss?entry=ttu">
                                     167/6 หมู่ที่ 7 Sukhumvit Rd, Phe, Mueang Rayong District, Rayong 21160, Thailand</a></li>
@@ -100,11 +101,12 @@
                                 <li><p>Email: <a class="email" href="mailto:tamnanpar.resort@gmail.com">tamnanpar.resort@gmail.com</a></p></li>
                             </div>
                             <p style="padding-top: 2vh;">You can also contact us through our social media account</p>
+                            <br>
                             <div class="social-contact">
-                                <li>Facebook</li>
-                                <li>Instagram</li>
-                                <li>Line</li>
-                                <li>TikTok</li>
+                                <li><a href="#" class="faceb"><img src="../Images/Social-media/317746_facebook_social media_social_icon.png" style="max-height: 40px;"></a></li>
+                                <li><a href="#" class="insta"><img src="../Images/Social-media/2993766_instagram_social media_icon.png" style="max-height: 40px;"></a></li>
+                                <li><a href="#" class="line"><img src="../Images/Social-media/8010435_line_message_conversation_communication_chat_icon.png" style="max-height: 40px;"></a></li>
+                                <li><a href="#" class="tictok"><img src="../Images/Social-media/4362958_tiktok_logo_social media_icon.png" style="max-height: 40px;"></a></li>
                             </div>     
                         </div>
                     </div>

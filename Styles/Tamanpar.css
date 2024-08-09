@@ -449,3 +449,56 @@ footer {
   color: black;
   font-family: "Roboto", sans-serif;
 }
+
+.other-contact li {
+  list-style: none;
+}
+.social-contact li {
+  list-style: none;
+}
+
+.input-names {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 514px) {
+  .input-names {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.input-contact-info {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 514px) {
+  .input-contact-info {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.form-input {
+  height: 120px;
+  max-height: 300px;
+  width: 500px;
+  max-width: 500px;
+}
+
+@media (max-width: 522px) {
+  .form-input {
+    height: 120px;
+    max-height: 300px;
+    width: 80%;
+    max-width: 80%;
+  }
+}
