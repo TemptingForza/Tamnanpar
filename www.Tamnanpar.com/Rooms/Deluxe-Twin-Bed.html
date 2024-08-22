@@ -1,34 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="scripts.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resort</title>
-    <link rel="stylesheet" href="../../Styles/Styles.css">
-  </head>
-  <body style="background-color: rgb(214, 199, 199);">
-    <header class="header">
-      <a href="../Home.html" class="Logo"><img src="../../Logo/LOGO TAMNANPAR (L).png"></a>
-      <nav>
-        <div>
-          <ul id ="menu">
-            <a href="Home.html">Home</a>
-            <a href="Restaurant.html">Restaurant</a>
-            <a href="Waterpark.html">Water Park</a>
-            <a href="Resort.html">Resort</a>
-            <a href="">Contact Us</a>
-          </ul>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Deluxe-Twin-Bed</title>
+        <link href='https://fonts.googleapis.com/css2?family=Caveat&display=swap' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../Styles/Tamanpar.css"> 
+    </head>
+    <script src="../../Scripts/Sidebar.js"></script>
+    <script src="../../Scripts/RoomSlides.js"></script>
+    <style>
+.roomslide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slideshow-container {
+    width: 80%;
+    height: auto;
+
+}
+
+.mySlides img{
+  width: 100%;
+  height: 1000px;
+}
+
+.mySlides {
+  display: none; /* hide all slides initially */
+}
+
+.mySlides.active {
+  display: block; /* show the active slide */
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+    </style>
+    <body>
+        <div header>
+            <div class="header-ui">
+                <nav>
+                    <ul class="sidebar">
+                        <li onclick=hideSidebar()><a href="#"><img class="Logo" src="../../Logo/icons8-close-60.png"></a></li>
+                        <li><a href="Hometest2.html">Home</a></li>
+                        <li><a href="#">Restaurant</a></li>
+                        <li><a href="#">Waterpark</a></li>
+                        <li><a href="#">Resort</a></li>
+                        <li><a href="#">ContactUs</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" class="Logo"><img src="../../Logo/LOGO TAMNANPAR (L).png" style="color: whitesmoke;"></a></li>
+                        <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
+                        <li class="hideOnMobile"><a href="#">Restaurant</a></li>
+                        <li class="hideOnMobile"><a href="#">Waterpark</a></li>
+                        <li class="hideOnMobile"><a href="#">Resort</a></li>
+                        <li class="hideOnMobile"><a href="#">ContactUs</a></li>
+                        <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../../Logo/icons8-hamburger-menu-48.png"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div><!--Nav End-->
+        <section class="site-content" style="background-color: rgb(255, 255, 255);">
+          <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 150px;">
+          </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+          <div class="Roomtitle">
+            <h1 style="text-align: left; padding-left: 100px;">Deluxe Twin Bed</h1>
+          </div>
+          <section class="roomslide-container">
+            <div class="slideshow-container">
+
+                <div class="mySlides fade active">
+                  <img src="../../RoomVariety/Cozy-King/Cozy King 5.jpg" alt="Room 1">
+                </div>
+                <div class="mySlides fade">
+                  <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin2.jpg" alt="Room 2">
+                </div>
+                <div class="mySlides fade">
+                    <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin3.jpg" alt="Room 3">
+                </div>
+                <div class="mySlides fade">
+                    <img src="../../RoomVariety/Deluxe-Twin/DT5.jpg" alt="Room 4">
+                </div>
+                <div class="mySlides fade">
+                    <img src="../../RoomVariety/Deluxe-Twin/DT8.jpg" alt="Room 5">
+                </div>
+    
+                <!-- Add more slides here -->
+                <div class="prevNext" style="text-align: right;">
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <span id="slideNum" style="font-family: 'Courier New', Courier, monospace;">1</span>
+                <span style="font-family: 'Courier New', Courier, monospace;">/</span>
+                <span style="font-family: 'Courier New', Courier, monospace;">5</span>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+    
+                <div class="dot-container">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                  <span class="dot" onclick="currentSlide(4)"></span>
+                  <span class="dot" onclick="currentSlide(5)"></span>
+                  <!-- Add more dots here -->
+                </div>
+            </div>
+          </section>
+        <section class="roomDetails">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cumque numquam quia consequatur aperiam</p>
+            <p>in asperiores, dignissimos velit qui vitae.</p> 
+            <p>Repudiandae quia consequuntur error vero ipsum molestiae sapiente harum repellat?</p>
         </div>
-      </nav>  
-    </header>
-
-
-
-
-
-
-
-
-    </div>
-  </body>
+        </section>
+        <footer id="footer">
+            <section class="footer-content">
+                <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
+                <div class="footer-grid">
+                    <div class="footer-logo">
+                        <li><a href="#" class="logo-foot"><img src="../../Logo/LOGO TAMNANPAR (L).png"></a></li>
+                    </div>
+                    <!--Social start-->
+                    <div class="footer-social">
+                        <!--Will need to check if there is any legal issues could be need to give credit or pay for it-->
+                        <li><a href="#" class="faceb"><img src="../../Images/Social-media/317746_facebook_social media_social_icon.png"></a></li>
+                        <li><a href="#" class="insta"><img src="../../Images/Social-media/2993766_instagram_social media_icon.png"></a></li>
+                        <li><a href="#" class="line"><img src="../../Images/Social-media/8010435_line_message_conversation_communication_chat_icon.png"></a></li>
+                        <li><a href="#" class="tictok"><img src="../../Images/Social-media/4362958_tiktok_logo_social media_icon.png"></a></li>
+                    </div>
+                    <!--Social end-->
+                    <!--Info start-->
+                    <div class="footer-info">
+                        <li><a class="address" href="https://www.google.com/maps/place/Tamnanpar+Resort/@12.6372542,101.4015809,17z/data=!4m13!1m2!2m1!1stamnanpar!3m9!1s0x3103016f0514699f:0x66988bbf81693c92!5m2!4m1!1i2!8m2!3d12.6382293!4d101.4039916!15sCgl0YW1uYW5wYXJaCyIJdGFtbmFucGFykgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tnspcss?entry=ttu">
+                            167/6 หมู่ที่ 7 Sukhumvit Rd, Phe, Mueang</a></li>
+                            <li><a class="address" href="https://www.google.com/maps/place/Tamnanpar+Resort/@12.6372542,101.4015809,17z/data=!4m13!1m2!2m1!1stamnanpar!3m9!1s0x3103016f0514699f:0x66988bbf81693c92!5m2!4m1!1i2!8m2!3d12.6382293!4d101.4039916!15sCgl0YW1uYW5wYXJaCyIJdGFtbmFucGFykgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tnspcss?entry=ttu">
+                                Rayong District, Rayong 21160, Thailand</a></li>
+                            <li><p>Restaurant Phone-Number: <a class="RestP" href="tel:006638652884"> +66-38-652-884</a></p></li>
+                            <li><p>Resort Phone-Number: <a class="ResortP" href="tel:006638928222">+66-38-928-222</a></p></li>
+                            <li><p>Email: <a class="email" href="mailto:tamnanpar.resort@gmail.com">tamnanpar.resort@gmail.com</a></p></li>
+                            <li><a class="privacy" href="#"><b>Privacy Policy</b></a></li>
+                    </div><!--end of footer-info-->
+                    <!--footer nav start-->
+                    <div class="footer-nav" style="margin-right: 0px;">
+                        <li class="hideOnMobilefoot"><a href="#">Home</a></li>
+                        <li class="hideOnMobilefoot"><a href="#">Restaurant</a></li>
+                        <li class="hideOnMobilefoot"><a href="#">Waterpark</a></li>
+                        <li class="hideOnMobilefoot"><a href="#">Resort</a></li>
+                        <li class="hideOnMobilefoot"><a href="#">ContactUs</a></li>
+                    </div>
+                <!--footer nav end-->
+            </div>
+            <!--Info end-->
+        </div>
+        <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 5vh;">
+        </div><!--module-room-stripe this is to have a gap between intro and rooms-->    
+    </section>
+</footer>
+</body>

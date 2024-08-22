@@ -5,6 +5,9 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   min-height: 100vh;
   font-family: "Caveat", cursive;
 }
@@ -320,9 +323,23 @@ button:hover {
   max-width: auto;
   max-height: 100px;
 }
-footer {
+#footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
   background-color: rgb(46, 46, 46);
 }
+#main-footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(46, 46, 46);
+}
+.footer-content {
+  bottom: 0;
+  margin-bottom: 0px;
+}
+
 .footer-grid {
   display: flex;
   justify-content: space-evenly;
@@ -450,28 +467,13 @@ footer {
   font-family: "Roboto", sans-serif;
 }
 
-.other-contact li {
-  list-style: none;
-}
+/*Contact Us Styles*/
+.other-contact li,
 .social-contact li {
   list-style: none;
 }
 
-.input-names {
-  text-align: left;
-  display: flex;
-  justify-content: center;
-}
-
-@media (max-width: 514px) {
-  .input-names {
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
+.input-names,
 .input-contact-info {
   text-align: left;
   display: flex;
@@ -479,6 +481,7 @@ footer {
 }
 
 @media (max-width: 514px) {
+  .input-names,
   .input-contact-info {
     text-align: center;
     align-items: center;
@@ -502,3 +505,16 @@ footer {
     max-width: 80%;
   }
 }
+
+.Phone-Number,
+.first-name {
+  padding-right: 15px;
+}
+
+@media (max-width: 522px) {
+  .Phone-Number,
+  .first-name {
+    padding-right: 0px;
+  }
+}
+/*Contact Us Styles End*/
