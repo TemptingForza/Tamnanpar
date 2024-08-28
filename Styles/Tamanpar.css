@@ -63,10 +63,15 @@ nav a {
 .hideOnMobile a {
   font-size: 25px;
   font-style: "Poppins", sans-serif;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 5px;
+  transition: text-decoration-colour 0.3s ease-in;
 }
 ul .hideOnMobile a:hover {
-  background-color: #807e7e44;
   text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
+  text-decoration-color: rgba(218, 165, 32, 1);
 }
 nav .Logo a:hover {
   background-color: rgba(21, 21, 21, 1);
@@ -160,8 +165,28 @@ nav li:first-child {
     /* Top shadow */ 0px 3px 5px rgba(0, 0, 0, 0.7); /*Bottom shadow*/
 }
 .title {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
+@media (max-width: 860px) {
+  .title {
+    flex-direction: column;
+  }
+}
+.title h2 {
+  padding-right: 30px;
+}
+.title h1 {
+  padding-right: 10px;
+}
+
+.title h1,
+.title p {
+  padding-top: 20px;
+}
+
 h2 {
   color: rgb(4, 158, 4);
   font-size: 140px;
@@ -174,7 +199,7 @@ h1 {
 }
 .title p {
   color: rgba(218, 165, 32, 1);
-  font-size: 60px;
+  font-size: 100px;
   font-family: "Caveat", cursive;
 }
 @media (max-width: 570px) {
@@ -182,20 +207,24 @@ h1 {
     font-size: 8vh;
   }
 }
-.homeDetails iframe {
+.homeVideo {
+  padding-bottom: 20px;
+}
+.homeVideo iframe {
   height: 60vh;
   width: 60vw;
 }
 @media (max-width: 800px) {
-  .homeDetails iframe {
+  .homeVideo iframe {
     height: 60vh;
     width: 80vw;
   }
 }
+
 .homeDetails p {
   color: #212121;
   font-size: 15px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Helvetica";
 }
 
 /*Restauraunt in home styles*/
@@ -222,7 +251,7 @@ h1 {
 }
 .details {
   background-color: aliceblue;
-  height: 100%;
+  height: auto;
   box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.7),
     /* Top shadow */ 0px 3px 5px rgba(0, 0, 0, 0.7); /*Bottom shadow*/
 }
@@ -237,16 +266,30 @@ h1 {
   justify-content: space-evenly;
 }
 
+.homeRestaurant-img {
+  width: 40vw;
+  height: 34vw;
+  border-radius: 5px;
+  padding: 10px, 10px;
+}
+
+.homeRestaurant-img p {
+  padding: 1vh 1vw;
+}
+
 .homeimages img {
-  width: 30vw;
+  width: 40vw;
 }
 @media (max-width: 800px) {
   .homeimages {
     flex-direction: column;
   }
   .homeimages img {
-    padding-top: 10px;
     width: 100%;
+  }
+  .homeRestaurant-img {
+    width: 100%;
+    justify-content: space-evenly;
   }
 }
 /*Restauraunt styles in home end*/
@@ -373,9 +416,11 @@ button:hover {
 .footer-nav a {
   font-size: 20px;
   color: whitesmoke;
-  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration: none;
 }
 .footer-nav a:hover {
+  text-decoration: underline;
   color: rgba(218, 165, 32, 0.76);
 }
 
@@ -395,9 +440,11 @@ button:hover {
 .footer-info a {
   font-size: 20px;
   color: whitesmoke;
+  text-underline-offset: 5px;
   text-decoration: underline;
 }
 .footer-info a:hover {
+  text-decoration: underline;
   color: rgba(218, 165, 32, 0.76);
 }
 .footer-info p {
@@ -409,6 +456,17 @@ button:hover {
   font-size: 20px;
   color: whitesmoke;
   text-decoration: underline;
+}
+.hideOnMobilefoot a {
+  text-underline-offset: 5px;
+  text-decoration-thickness: 5px;
+  transition: text-decoration-colour 0.3s ease-in;
+}
+ul .hideOnMobilefoot a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 3px;
+  text-decoration-color: rgba(218, 165, 32, 1);
 }
 @media (max-width: 800px) {
   .hideOnMobilefoot {
