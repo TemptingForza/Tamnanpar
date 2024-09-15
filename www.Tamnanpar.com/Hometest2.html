@@ -6,9 +6,11 @@
         <title>Home</title>
         <link href='https://fonts.googleapis.com/css2?family=Caveat&display=swap' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
         <link rel="stylesheet" href="../Styles/Tamanpar.css"> 
     </head>
     <script src="../Scripts/Sidebar.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
     <body>
         <div header>
             <div class="header-ui">
@@ -19,22 +21,62 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="Restaurant2.html">Restaurant</a></li>
                         <li><a href="#">Resort</a></li>
-                        <li><a href="#">Rooms</a></li>
+                        <li><a href="Waterpark2.html">Rooms</a></li>
                         <li><a href="#">ContactUs</a></li>
                     </ul>
-                    <ul>
+                    <ul id="bar">
                         <!--This is shown nav-->
                         <li><a href="#" class="Logo"><img src="../Logo/LOGO TAMNANPAR (L).png" style="color: whitesmoke;"></a></li>
                         <li class="hideOnMobile"><a href="#">Home</a></li>
                         <li class="hideOnMobile"><a href="Restaurant2.html">Restaurant</a></li>
                         <li class="hideOnMobile"><a href="#">Resort</a></li>
-                        <li class="hideOnMobile"><a href="Waterpark2.html">Rooms</a></li>
+                        <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
                         <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
                         <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../Logo/icons8-hamburger-menu-48.png"></a></li>
                     </ul>
+                    <div class="bottom-right-button">
+                        <button><a href="ContactUs.html">Book Now</a></button>
                 </nav>
             </div>
         </div><!--Nav End-->
+        <style>
+            .bottom-right-button {
+            position: fixed;
+            top: 100px;
+    right: 20px; /* Distance from the right edge of the viewport */
+    z-index: 1000; /* Ensure it's on top of other content */
+            }
+            @media (max-height: 849px){
+                .bottom-right-button{
+                    top: 117px
+                }
+                
+            }
+            @media (max-height: 838px){
+                .bottom-right-button{
+                    top: 110px
+                }
+                
+            }
+            @media (max-height: 477px){
+                .bottom-right-button{
+                    top: 65px;
+                }
+                
+            }
+
+.bottom-right-button button {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Optional: rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.bottom-right-button button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+        </style>
         
         <!--Welcome start-->
         <section class="site-content" style="background-image: url(../Images/RestaurantPath.jpg); background-size: 100%;">
@@ -78,34 +120,36 @@
                         <br>
                     </div>
                     <div class="homeimages">
-                        <div class="homeRestaurant-img" style="text-align: left; background-color: rgb(46, 46, 46, 0.2);">
-                            <p>Open for more than 20 years</p>
-                            <p>The restaurant was started at the end of the year.
-                            1997 during Tom Yum Kung Starting from liking nature of Mr. Chairat The president of the company
-                            thinks that if you like it you must do it, you must preserve it, and awaken the spirits of people who love nature.
-                            love the environment So it was created from an empty rice field.
-                            Make it a forest Take unused raw materials such as scrap wood and decorate them beautifully, including trees, rocks, cliffs,
-                            fountains, and waterfalls, creating a perfectly complete ecosystem.</p>
-                            <div class="homeRestImageContainer" style="width: 635px;">
+                        <div class="homeRestaurant-img" style="text-align: left;">
+                            <div class="homeRestHistory" style="background-color: rgb(46, 46, 46, 0.2); border-radius: 5px;">
+                                <p><b>Open for more than 20 years</b></p>
+                                <p>The restaurant was started at the end of the year.
+                                1997 during Tom Yum Kung Starting from liking nature of Mr. Chairat The president of the company
+                                thinks that if you like it you must do it, you must preserve it, and awaken the spirits of people who love nature.
+                                love the environment So it was created from an empty rice field.
+                                Make it a forest Take unused raw materials such as scrap wood and decorate them beautifully, including trees, rocks, cliffs,
+                                fountains, and waterfalls, creating a perfectly complete ecosystem.</p>
+                            </div>
+                            <div class="homeRestImageContainer">
                                 <img src="../Restaurant/FenderFoto-02908.jpg">
                             </div>
                         </div>
-                        <div class="homeRestaurant-img" style="text-align: left; background-color: rgb(46, 46, 46, 0.2);">
-                            <p>In the restaurant section<br>
-                            There are chefs who have been together for a long time, more than 20 years,
-                            living together as a family.
-                            Parents are chefs Since my children were little until today, I have grown up and come to work at the shop and never go anywhere.
-                            Everyone has a spirit of love for nature.
-                            Take care of the environment Meticulous attention to every dish Focus on healthy menus Most of the ingredients come                 
-                            from surrounding communities, such as fishing communities that deliver seafood.
-                            Khao Sampaothong Community Also sends duck eggs, chicken eggs, plants.</p>
-                            <div class="homeRestImageContainer" style="width: 635px;">
+                        <div class="homeRestaurant-img" style="text-align: left;">
+                            <div class="homeRestHistory" style="background-color: rgb(46, 46, 46, 0.2); border-radius: 5px;">
+                                <p><b>In the restaurant section</b><br><br>
+                                There are chefs who have been together for a long time, more than 20 years,
+                                living together as a family.
+                                Parents are chefs Since my children were little until today, I have grown up and come to work at the shop and never go anywhere.
+                                Everyone has a spirit of love for nature.
+                                Take care of the environment Meticulous attention to every dish Focus on healthy menus Most of the ingredients come                 
+                                from surrounding communities, such as fishing communities that deliver seafood.
+                                Khao Sampaothong Community Also sends duck eggs, chicken eggs, plants.</p>
+                            </div>
+                            <div class="homeRestImageContainer">
                                 <img src="../Restaurant/FenderFoto-02910.jpg">
                             </div>
                         </div>
                     </div>
-                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 10vh;">
-                    </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
                 </div>
             </div>
         </section>
@@ -120,15 +164,22 @@
                 <div class="details">
                     <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
                     </div><!--module-room-stripe this is to have a gap between intro and rooms-->
-                    <div class="infos" style="justify-content: center; align-items: center; text-align: center;">
-                        <p>Tamnanpar Water Park is a water park located in the resort.<br> 
-                        The water park is divided into 3 areas, namely the children's area, the family area, and the adult area.<br> 
-                        The children's area is a water park for children.<br> 
-                        There are many water games for children to play. The family area is a water park for families.<br> 
-                        There are many water games for families to play.<br> 
-                        The adult area is a water park for adults.<br> 
-                        The water park is open from <b>10:00 am to 6:00 pm</b>. The water park is closed on Mondays.</p>
-                        <br>
+                    <div class="waterslide" style="display: flex; justify-content: center; align-items: center;">
+                        <div class="gallery js-flickity"data-flickity='{ "cellAlign": "center", "contain": true }'>
+                            <div class="gallery-cell"><img src="../Waterpark/FenderFoto-02778.jpg" alt="Image 1"></div>
+                            <div class="gallery-cell"><img src="../Waterpark/FenderFoto-02779.jpg" alt="Image 2"></div>
+                            <div class="gallery-cell"><img src="../Waterpark/LINE_ALBUM_สวนน้ำ_221215_5.jpg" alt="Image 3"></div>
+                        </div>
+                        <div class="infos" style="justify-content: center; align-items: center; text-align: left;">
+                            <p>Tamnanpar Water Park is a water park located in the resort.<br> 
+                            The water park is divided into 3 areas, namely the children's area, the family area, and the adult area.<br> 
+                            The children's area is a water park for children.<br> 
+                            There are many water games for children to play. The family area is a water park for families.<br> 
+                            There are many water games for families to play.<br> 
+                            The adult area is a water park for adults.<br> 
+                            The water park is open from <b>10:00 am to 6:00 pm</b>. The water park is closed on Mondays.</p>
+                            <br>
+                        </div>
                     </div>
                     <div class="homeimages">
                         <!--img src="../Waterpark/FenderFoto-02778.jpg">

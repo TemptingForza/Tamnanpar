@@ -150,10 +150,11 @@ nav li:first-child {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  width: 100%;
   background-size: 100%;
   background-attachment: fixed;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1280px) {
   .site-content {
     background-attachment: scroll;
   }
@@ -204,6 +205,9 @@ h1 {
 }
 @media (max-width: 570px) {
   h2 {
+    font-size: 8vh;
+  }
+  .title p {
     font-size: 8vh;
   }
 }
@@ -264,11 +268,11 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-bottom: 3vh;
 }
-
 .homeRestaurant-img {
-  width: 40vw;
-  height: 34vw;
+  width: 45vw;
+  height: auto;
   border-radius: 5px;
   padding: 10px, 10px;
 }
@@ -278,7 +282,40 @@ h1 {
 }
 
 .homeimages img {
-  width: 40vw;
+  width: 45vw;
+}
+.homeRestHistory {
+  height: auto;
+}
+@media (max-width: 1446px) {
+  .homeRestHistory {
+    height: 178.97px;
+  }
+}
+@media (max-width: 1446px) {
+  .homeRestHistory {
+    height: 178.97px;
+  }
+}
+@media (max-width: 1262px) {
+  .homeRestHistory {
+    height: calc(178.97px + 18px);
+  }
+}
+@media (max-width: 1091px) {
+  .homeRestHistory {
+    height: calc(178.97px + 36px);
+  }
+}
+@media (max-width: 997px) {
+  .homeRestHistory {
+    height: calc(178.97px + 48px);
+  }
+}
+@media (max-width: 866px) {
+  .homeRestHistory {
+    height: calc(178.97px + 64px);
+  }
 }
 @media (max-width: 800px) {
   .homeimages {
@@ -286,13 +323,43 @@ h1 {
   }
   .homeimages img {
     width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
   }
   .homeRestaurant-img {
     width: 100%;
     justify-content: space-evenly;
   }
+  .homeRestHistory {
+    height: auto;
+  }
 }
 /*Restauraunt styles in home end*/
+/*Waterslide image slider for flickity*/
+.gallery {
+  background: #eee;
+  overflow: hidden;
+  width: 40%;
+}
+
+.gallery-cell img {
+  height: 500px; /* Set a fixed height */
+  object-fit: fill; /* Ensures the image fills the height */
+}
+
+.gallery-cell {
+  width: auto;
+  height: 500px;
+  margin-right: 10px;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  font-size: 80px;
+}
+
+/*flickity slide ends here*/
 /*Rooms styles in home*/
 .room-opt {
   display: flex;
@@ -310,6 +377,7 @@ h1 {
 }
 .room-images-container img {
   width: 30vw;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 @media (max-width: 800px) {
   .room-images-container img {
@@ -478,46 +546,40 @@ ul .hideOnMobilefoot a:hover {
 /*Styles for responsive home page with nav, footer and others end*/
 
 /*Restaurant Style*/
-.restaraunt-dishes {
+.restaraunt-area {
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-@media (max-width: 760px) {
-  .restaraunt-dishes {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
+@media (max-width: 870px) {
+  .restaraunt-area {
     flex-direction: column;
-    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
-@media (max-width: 760px) {
-  .restaraunt-dishes {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-.dishesimg img {
+.area-img img {
   width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media (max-width: 516px) {
-  .dishesimg img {
-    width: 300px;
+  .area-img img {
+    width: 280px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
-.dish-description-right {
+.area-description-right {
   text-align: left;
-  padding-right: 20px;
   padding-left: 20px;
+  padding-right: 20px;
   color: white;
   font-family: "Roboto", sans-serif;
 }
-.dish-description-left {
+.area-description-left {
   text-align: left;
   padding-right: 20px;
   padding-left: 20px;
