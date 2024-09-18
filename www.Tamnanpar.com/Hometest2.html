@@ -24,57 +24,46 @@
                         <li><a href="Waterpark2.html">Rooms</a></li>
                         <li><a href="#">ContactUs</a></li>
                     </ul>
-                    <ul id="bar">
+                    <ul>
                         <!--This is shown nav-->
                         <li><a href="#" class="Logo"><img src="../Logo/LOGO TAMNANPAR (L).png" style="color: whitesmoke;"></a></li>
                         <li class="hideOnMobile"><a href="#">Home</a></li>
                         <li class="hideOnMobile"><a href="Restaurant2.html">Restaurant</a></li>
                         <li class="hideOnMobile"><a href="#">Resort</a></li>
                         <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
+                        <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
                         <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
                         <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../Logo/icons8-hamburger-menu-48.png"></a></li>
                     </ul>
-                    <div class="bottom-right-button">
+                    <div class="book-now">
                         <button><a href="ContactUs.html">Book Now</a></button>
+                        </div>
                 </nav>
             </div>
         </div><!--Nav End-->
         <style>
-            .bottom-right-button {
+            .book-now {
             position: fixed;
-            top: 100px;
+            top: 110px;
     right: 20px; /* Distance from the right edge of the viewport */
     z-index: 1000; /* Ensure it's on top of other content */
             }
-            @media (max-height: 849px){
-                .bottom-right-button{
-                    top: 117px
-                }
-                
-            }
-            @media (max-height: 838px){
-                .bottom-right-button{
-                    top: 110px
-                }
-                
-            }
-            @media (max-height: 477px){
-                .bottom-right-button{
-                    top: 65px;
-                }
-                
-            }
+            @media (max-height: 480px) {
+  .book-now {
+    top: 70px;
+  }
+}
 
-.bottom-right-button button {
-    background-color: #007bff; /* Button background color */
+.book-now button {
+    background-color: rgba(218, 165, 32, 1); /* Button background color */
     color: white; /* Button text color */
     border: none; /* Remove button border */
     border-radius: 5px; /* Optional: rounded corners */
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-.bottom-right-button button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+.book-now button:hover {
+    background-color: rgba(218, 165, 32, 1); /* Darker shade on hover */
 }
         </style>
         
