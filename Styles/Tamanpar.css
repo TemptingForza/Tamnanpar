@@ -4,6 +4,17 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1 0; /* This will push the footer down */
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -19,6 +30,32 @@ body {
 }
 
 /*nav styles*/
+/*book now button*/
+.book-now {
+  position: fixed;
+  top: 110px;
+  right: 20px; /* Distance from the right edge of the viewport */
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+@media (max-height: 480px) {
+  .book-now {
+    top: 70px;
+  }
+}
+
+.book-now button {
+  background-color: rgba(218, 165, 32, 1); /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Optional: rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.book-now button:hover {
+  background-color: rgba(218, 165, 32, 1); /* Darker shade on hover */
+}
+/*book now button end*/
+
 nav {
   max-height: 300px;
   background-color: rgba(21, 21, 21, 1);
@@ -445,21 +482,18 @@ button:hover {
   max-width: auto;
   max-height: 100px;
 }
-#footer {
-  position: relative;
-  width: 100%;
-  bottom: 0;
-  background-color: rgb(46, 46, 46);
-}
+#footer,
 #main-footer {
-  position: relative;
+  position: static;
   width: 100%;
-  bottom: 0;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   background-color: rgb(46, 46, 46);
 }
 .footer-content {
-  bottom: 0;
-  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-bottom: auto;
 }
 
 .footer-grid {
@@ -604,48 +638,123 @@ ul .hideOnMobilefoot a:hover {
   list-style: none;
 }
 
+.first-name,
+.last-name,
+.Phone-number,
+.Email-address {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+input[name="User-First"],
+input[name="User-Surname"],
+input[name="User-Phone"],
+input[name="User-Email"] {
+  width: auto; /* Adjust the width */
+  height: 36px; /* Adjust the height */
+  padding: 5px; /* Optional: Add padding inside the input box */
+  font-size: 16px; /* Optional: Adjust text size */
+  border-radius: 5px;
+  border-color: rgb(4, 158, 4, 0.3);
+  transition: border-color 0.3s ease;
+}
+
+input[name="User-First"]:hover,
+input[name="User-Surname"]:hover,
+input[name="User-Phone"]:hover,
+input[name="User-Email"]:hover,
+textarea.form-input:hover {
+  border-color: rgb(4, 158, 4, 1);
+}
+
+input[name="User-First"]:focus,
+input[name="User-Surname"]:focus,
+input[name="User-Phone"]:focus,
+input[name="User-Email"]:focus,
+textarea.form-input:focus {
+  border-color: rgb(4, 158, 4, 1);
+  outline: none;
+  box-shadow: 0 0 5px rgba(4, 158, 4, 0.5);
+}
+
+textarea.form-input {
+  border-radius: 5px;
+  border-color: rgb(4, 158, 4, 0.3);
+  transition: border-color 0.3s ease;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.message-info {
+  display: flex;
+  flex-direction: column;
+}
+
 .input-names,
 .input-contact-info {
   text-align: left;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  margin-top: 0px;
+  margin-bottom: auto;
 }
 
-@media (max-width: 514px) {
+@media (max-width: 980px) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .input-names,
+  .input-contact-info,
+  .message {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+
+.contact-form p {
+  font-size: 23px;
+}
+
+@media (max-width: 510px) {
   .input-names,
   .input-contact-info {
+    margin-top: 0px;
     text-align: center;
-    align-items: center;
     display: flex;
+    justify-content: center;
     flex-direction: column;
   }
 }
 
+.message {
+  align-items: center;
+  resize: vertical;
+}
+
 .form-input {
-  height: 120px;
+  height: 125px;
   max-height: 300px;
   width: 500px;
   max-width: 500px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 @media (max-width: 522px) {
   .form-input {
     height: 120px;
     max-height: 300px;
-    width: 80%;
-    max-width: 80%;
-  }
-}
-
-.Phone-Number,
-.first-name {
-  padding-right: 15px;
-}
-
-@media (max-width: 522px) {
-  .Phone-Number,
-  .first-name {
-    padding-right: 0px;
+    width: 300px;
+    max-width: 300px;
   }
 }
 /*Contact Us Styles End*/

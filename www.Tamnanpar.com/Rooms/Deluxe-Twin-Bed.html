@@ -11,13 +11,14 @@
     <script src="../../Scripts/Sidebar.js"></script>
     <script src="../../Scripts/RoomSlides.js"></script>
     <style>
+      .TitleAndImageSlider{
+        display: flex;
+        flex-direction: column;
+      }
 .roomslide-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .slideshow-container {
-    width: 80%;
     height: auto;
 
 }
@@ -81,74 +82,86 @@
         <div header>
             <div class="header-ui">
                 <nav>
+                    <!--This is sidebar nav-->
                     <ul class="sidebar">
-                        <li onclick=hideSidebar()><a href="#"><img class="Logo" src="../../Logo/icons8-close-60.png"></a></li>
-                        <li><a href="Hometest2.html">Home</a></li>
-                        <li><a href="#">Restaurant</a></li>
-                        <li><a href="#">Waterpark</a></li>
-                        <li><a href="#">Resort</a></li>
-                        <li><a href="#">ContactUs</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#" class="Logo"><img src="../../Logo/LOGO TAMNANPAR (L).png" style="color: whitesmoke;"></a></li>
-                        <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
-                        <li class="hideOnMobile"><a href="#">Restaurant</a></li>
-                        <li class="hideOnMobile"><a href="#">Waterpark</a></li>
-                        <li class="hideOnMobile"><a href="#">Resort</a></li>
-                        <li class="hideOnMobile"><a href="#">ContactUs</a></li>
-                        <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../../Logo/icons8-hamburger-menu-48.png"></a></li>
-                    </ul>
+                      <li onclick=hideSidebar()><a href="#"><img class="Logo" src="../Logo/icons8-close-60.png"></a></li>
+                      <li><a href="Hometest2.html">Home</a></li>
+                      <li><a href="Restaurant2.html">Dining</a></li>
+                      <li><a href="#">Resort</a></li>
+                      <li><a href="Waterpark2.html">Rooms</a></li>
+                      <li><a href="#">Meeting & Events</a></li>
+                      <li><a href="ContactUs.html">Contact</a></li>
+                  </ul>
+                  <ul>
+                      <!--This is shown nav-->
+                      <li><a href="Hometest2.html" class="Logo"><img src="../../Logo/LOGO TAMNANPAR (L).png" style="color: whitesmoke;"></a></li>
+                      <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
+                      <li class="hideOnMobile"><a href="Restaurant2.html">Dining</a></li>
+                      <li class="hideOnMobile"><a href="#">Resort</a></li>
+                      <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
+                      <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
+                      <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
+                      <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../Logo/icons8-hamburger-menu-48.png"></a></li>
+                  </ul>
+                  <div class="book-now">
+                      <button><a href="ContactUs.html">Book Now</a></button>
+                      </div>
                 </nav>
             </div>
         </div><!--Nav End-->
         <section class="site-content" style="background-color: rgb(255, 255, 255);">
           <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 150px;">
           </div><!--module-room-stripe this is to have a gap between intro and rooms-->
-          <div class="Roomtitle">
-            <h1 style="text-align: left; padding-left: 100px;">Deluxe Twin Bed</h1>
-          </div>
-          <section class="roomslide-container">
-            <div class="slideshow-container">
-
-                <div class="mySlides fade active">
-                  <img src="../../RoomVariety/Cozy-King/Cozy King 5.jpg" alt="Room 1">
-                </div>
-                <div class="mySlides fade">
-                  <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin2.jpg" alt="Room 2">
-                </div>
-                <div class="mySlides fade">
-                    <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin3.jpg" alt="Room 3">
-                </div>
-                <div class="mySlides fade">
-                    <img src="../../RoomVariety/Deluxe-Twin/DT5.jpg" alt="Room 4">
-                </div>
-                <div class="mySlides fade">
-                    <img src="../../RoomVariety/Deluxe-Twin/DT8.jpg" alt="Room 5">
-                </div>
-    
-                <!-- Add more slides here -->
-                <div class="prevNext" style="text-align: right;">
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <span id="slideNum" style="font-family: 'Courier New', Courier, monospace;">1</span>
-                <span style="font-family: 'Courier New', Courier, monospace;">/</span>
-                <span style="font-family: 'Courier New', Courier, monospace;">5</span>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-                </div>
-    
-                <div class="dot-container">
-                  <span class="dot" onclick="currentSlide(1)"></span>
-                  <span class="dot" onclick="currentSlide(2)"></span>
-                  <span class="dot" onclick="currentSlide(3)"></span>
-                  <span class="dot" onclick="currentSlide(4)"></span>
-                  <span class="dot" onclick="currentSlide(5)"></span>
-                  <!-- Add more dots here -->
-                </div>
+          <section class="TitleAndImageSlider">
+            <div class="Roomtitle">
+              <h1 style="text-align: left;">Deluxe Twin Bed</h1>
+            </div>
+            <div class="roomslide-container">
+              <div class="slideshow-container">
+  
+                  <div class="mySlides fade active" style="width: 600px; height: 560px; overflow: hidden;">
+                    <img src="../../RoomVariety/Cozy-King/Cozy King 5.jpg" alt="Room 1" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div class="mySlides fade" style="width: 600px; height: 560px; overflow: hidden;">
+                    <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin2.jpg" alt="Room 2" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div class="mySlides fade" style="width: 600px; height: 560px; overflow: hidden;">
+                      <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin3.jpg" alt="Room 3" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div class="mySlides fade" style="width: 600px; height: 560px; overflow: hidden;">
+                      <img src="../../RoomVariety/Deluxe-Twin/DT5.jpg" alt="Room 4" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div class="mySlides fade" style="width: 600px; height: 560px; overflow: hidden;">
+                      <img src="../../RoomVariety/Deluxe-Twin/DT8.jpg" alt="Room 5" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                    
+      
+                  <!-- Add more slides here -->
+                  <div class="prevNext" style="text-align: right;">
+                  <a class="prev" onclick="plusSlides(-1)">❮</a>
+                  <span id="slideNum" style="font-family: 'Courier New', Courier, monospace;">1</span>
+                  <span style="font-family: 'Courier New', Courier, monospace;">/</span>
+                  <span style="font-family: 'Courier New', Courier, monospace;">5</span>
+                  <a class="next" onclick="plusSlides(1)">❯</a>
+                  </div>
+      
+                  <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <!-- Add more dots here -->
+                  </div>
+              </div>
             </div>
           </section>
         <section class="roomDetails">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cumque numquam quia consequatur aperiam</p>
-            <p>in asperiores, dignissimos velit qui vitae.</p> 
-            <p>Repudiandae quia consequuntur error vero ipsum molestiae sapiente harum repellat?</p>
+          <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cumque numquam quia consequatur aperiam<br>
+            in asperiores, dignissimos velit qui vitae.<br>
+            Repudiandae quia consequuntur error vero ipsum molestiae sapiente harum repellat?</p>
+            <br>
         </div>
         </section>
         <footer id="footer">
