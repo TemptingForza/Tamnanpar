@@ -13,7 +13,17 @@
     <style>
       .TitleAndImageSlider{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+      }
+      .Roomtitle{
+        display: flex;
+        flex-direction: row;
+        padding-left: 10%;
+        padding-bottom: 2vh;
+      }
+      .Room-name{
+        left: 200px;
       }
 .roomslide-container {
     display: flex;
@@ -42,6 +52,7 @@
 
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
+  cursor: pointer;
 }
 
 .text {
@@ -56,10 +67,10 @@
 .dot {
   cursor: pointer;
   height: 15px;
-  width: 15px;
+  width: 20px;
   margin: 0 2px;
   background-color: #bbb;
-  border-radius: 50%;
+  border-radius: 2px;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
@@ -84,7 +95,7 @@
                 <nav>
                     <!--This is sidebar nav-->
                     <ul class="sidebar">
-                      <li onclick=hideSidebar()><a href="#"><img class="Logo" src="../Logo/icons8-close-60.png"></a></li>
+                      <li onclick=hideSidebar()><a href="#"><img class="Logo" src="../../Logo/icons8-close-60.png"></a></li>
                       <li><a href="Hometest2.html">Home</a></li>
                       <li><a href="Restaurant2.html">Dining</a></li>
                       <li><a href="#">Resort</a></li>
@@ -101,7 +112,7 @@
                       <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
                       <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
                       <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
-                      <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../Logo/icons8-hamburger-menu-48.png"></a></li>
+                      <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../../Logo/icons8-hamburger-menu-48.png"></a></li>
                   </ul>
                   <div class="book-now">
                       <button><a href="ContactUs.html">Book Now</a></button>
@@ -112,26 +123,28 @@
         <section class="site-content" style="background-color: rgb(255, 255, 255);">
           <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 150px;">
           </div><!--module-room-stripe this is to have a gap between intro and rooms-->
-          <section class="TitleAndImageSlider">
-            <div class="Roomtitle">
-              <h1 style="text-align: left;">Deluxe Twin Bed</h1>
+          <div class="Roomtitle">
+            <div class="Room-Name">
+              <h1>Deluxe Twin Bed</h1>
             </div>
+          </div>
+          <section class="TitleAndImageSlider">
             <div class="roomslide-container">
               <div class="slideshow-container">
   
-                  <div class="mySlides fade active" style="width: 600px; height: 560px; overflow: hidden;">
+                  <div class="mySlides fade active" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
                     <img src="../../RoomVariety/Cozy-King/Cozy King 5.jpg" alt="Room 1" style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
-                  <div class="mySlides fade" style="width: 600px; height: 560px; overflow: hidden;">
+                  <div class="mySlides fade" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
                     <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin2.jpg" alt="Room 2" style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
-                  <div class="mySlides fade" style="width: 600px; height: 560px; overflow: hidden;">
+                  <div class="mySlides fade" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
                       <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin3.jpg" alt="Room 3" style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
-                  <div class="mySlides fade" style="width: 600px; height: 560px; overflow: hidden;">
+                  <div class="mySlides fade" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
                       <img src="../../RoomVariety/Deluxe-Twin/DT5.jpg" alt="Room 4" style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
-                  <div class="mySlides fade" style="width: 600px; height: 560px; overflow: hidden;">
+                  <div class="mySlides fade" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
                       <img src="../../RoomVariety/Deluxe-Twin/DT8.jpg" alt="Room 5" style="width: 100%; height: 100%; object-fit: cover;">
                   </div>
                     
@@ -155,15 +168,15 @@
                   </div>
               </div>
             </div>
+            <div class="roomDetails" style="padding-left: 10px; padding-right: 10px;">
+              <br>
+                <p style="font-family: Poppins, sans-serif;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cumque numquam quia consequatur aperiam<br>
+                in asperiores, dignissimos velit qui vitae.<br>
+                Repudiandae quia consequuntur error vero ipsum molestiae sapiente harum repellat?</p>
+                <br>
+            </div>
           </section>
-        <section class="roomDetails">
-          <br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cumque numquam quia consequatur aperiam<br>
-            in asperiores, dignissimos velit qui vitae.<br>
-            Repudiandae quia consequuntur error vero ipsum molestiae sapiente harum repellat?</p>
-            <br>
-        </div>
-        </section>
+      </div>
         <footer id="footer">
             <section class="footer-content">
                 <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
