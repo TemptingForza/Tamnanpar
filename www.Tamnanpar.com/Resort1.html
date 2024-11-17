@@ -10,21 +10,21 @@
         <link rel="stylesheet" href="../Styles/Tamanpar.css"> 
     </head>
     <script src="../Scripts/Sidebar.js"></script>
-    <script src="../Scripts//Resort-Slide.js"></script>
+    <script src="../Scripts//ResortSlide.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
   -->
     <style>
       .slider-container {
   position: relative;
-  width: 600px;
-  height: 400px;
+  width: 100%;
+  height: 875px;
   margin: 50px auto;
   overflow: hidden;
 }
 
 #slides {
   display: flex;
-  width: 300%;
+  width: 100%;
   height: 100%;
   position: relative;
   transform: translateX(0);
@@ -47,6 +47,9 @@
 .slide:nth-child(1) { background-color: #ff7675; }
 .slide:nth-child(2) { background-color: #74b9ff; }
 .slide:nth-child(3) { background-color: #55efc4; }
+.slide:nth-child(4) { background-color: #ff7675; }
+.slide:nth-child(5) { background-color: #74b9ff; }
+.slide:nth-child(6) { background-color: #55efc4; }
 
 .nav-button {
   position: absolute;
@@ -131,11 +134,15 @@
         </div><!--Nav End-->
 
     <div id="site-content">
+      <div class="pad" style="padding-top: 10px; padding-bottom: 10px;"></div>
       <div class="slider-container">
         <div id="slides">
           <div class="slide">Slide 1</div>
           <div class="slide">Slide 2</div>
           <div class="slide">Slide 3</div>
+          <div class="slide">Slide 4</div>
+          <div class="slide">Slide 5</div>
+          <div class="slide">Slide 6</div>
         </div>
         
         <button class="nav-button prev">←</button>
@@ -143,6 +150,9 @@
         
         <div class="dots">
           <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
           <div class="dot"></div>
           <div class="dot"></div>
         </div>
