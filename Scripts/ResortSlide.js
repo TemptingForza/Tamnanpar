@@ -125,41 +125,88 @@ document.addEventListener("DOMContentLoaded", () => {
     isDragging = false;
     slider.style.transition = "transform 0.5s ease";
 
-    //const walkThreshold = window.innerWidth / 2;
-    const slideWidth =
-      window.innerWidth < 480 ? 90 : window.innerWidth < 768 ? 80 : 100; // Adjust according to your designconst slider = document.querySelector("#slides");
+    const sliderWidth = slider.clientWidth;
     const walk = currentX - startX;
-
-    // Calculate the current slide position in percentage
-    const currentSlidePosition = currentSlide * 100; // e.g., slide 0 -> -0%, slide 1 -> -100%, etc.
-    const newSlidePosition = currentSlidePosition + (walk / slideWidth) * 100; // Adjust the new position based on drag
+    const dragPercentage = (walk / sliderWidth) * 100;
 
     let targetSlide = currentSlide;
 
-    if (newSlidePosition < currentSlidePosition - 50) {
-      // If dragged past halfway to the previous slide
-      targetSlide = Math.max(currentSlide - 1, 0); // Ensure we don't go below 0
-    } else if (newSlidePosition > currentSlidePosition + 50) {
-      // If dragged past halfway to the next slide
-      targetSlide = Math.min(currentSlide + 1, slides.length - 1); // Ensure we don't go above the last slide
+    // Refined slide visibility calculation
+    const visibilityThreshold = 30; // Adjust this value as needed
+    let mostVisibleSlide = currentSlide;
+    let maxVisibility = 0;
+
+    slides.forEach((slide, index) => {
+      // Calculate the position of each slide relative to the current view
+      const slideOffset = index * sliderWidth;
+      const currentPosition = -currentSlide * sliderWidth + walk;
+
+      // Calculate visibility
+      const slideLeft = slideOffset;
+      const slideRight = slideOffset + sliderWidth;
+
+      const visibleLeft = Math.max(currentPosition, slideLeft);
+      const visibleRight = Math.min(currentPosition + sliderWidth, slideRight);
+
+      const visibleWidth = Math.max(0, visibleRight - visibleLeft);
+      const visibilityPercentage = (visibleWidth / sliderWidth) * 100;
+
+      console.log(`Slide ${index}:
+            Offset: ${slideOffset}
+            Current Position: ${currentPosition}
+            Visible Width: ${visibleWidth}
+            Visibility: ${visibilityPercentage.toFixed(2)}%`);
+
+      // Track the most visible slide
+      if (visibilityPercentage > maxVisibility) {
+        maxVisibility = visibilityPercentage;
+        mostVisibleSlide = index;
+      }
+    });
+
+    // Determine target slide based on drag direction and visibility
+    if (dragPercentage < -visibilityThreshold) {
+      // Dragged left significantly
+      targetSlide = Math.min(currentSlide + 1, slides.length - 1);
+    } else if (dragPercentage > visibilityThreshold) {
+      // Dragged right significantly
+      targetSlide = Math.max(currentSlide - 1, 0);
+    } else {
+      // Use the most visible slide
+      targetSlide = mostVisibleSlide;
     }
+
+    console.log(`
+    Drag Percentage: ${dragPercentage.toFixed(2)}%
+    Most Visible Slide: ${mostVisibleSlide}
+    Target Slide: ${targetSlide}`);
+
     // Go to the target slide
     goToSlide(targetSlide);
+    resetAutoSlide();
+  }
 
-    resetAutoSlide(); // Reset the auto slide interval
-    //const walkThreshold = slideWidth / 2;
-    //const visiblePercentage = Math.abs(walk) / slideWidth;
-    //if (Math.abs(walk) > walkThreshold) {
-    //if (visiblePercentage > 0.5) {
-    //if (walk > 0) {
-    //prevSlide(); // Move to previous slide
-    //} else {
-    //nextSlide(); // Move to next slide
-    //}
-    //} else {
-    //updateSlider(); // Reset to current slide
-    //}
-    //resetAutoSlide(); // Reset the auto slide interval
+  // Helper function to calculate slide visibility
+  function calculateSlideVisibility(slidePosition, sliderWidth, dragDistance) {
+    // Calculate the current position of the slider after dragging
+    const currentSliderPosition = -currentSlide * sliderWidth + dragDistance;
+
+    // Calculate how much of the slide is visible
+    const slideLeft = slidePosition;
+    const slideRight = slidePosition + sliderWidth;
+
+    // Calculate the visible portion of the slide
+    const visibleLeft = Math.max(currentSliderPosition, slideLeft);
+    const visibleRight = Math.min(
+      currentSliderPosition + sliderWidth,
+      slideRight
+    );
+
+    // Calculate the percentage of the slide that is visible
+    const visibleWidth = Math.max(0, visibleRight - visibleLeft);
+    const visibilityPercentage = (visibleWidth / sliderWidth) * 100;
+
+    return visibilityPercentage;
   }
 
   // Mouse Events
