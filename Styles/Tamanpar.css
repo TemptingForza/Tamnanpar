@@ -408,6 +408,17 @@ h1 {
 
 /*flickity slide ends here*/
 /*Rooms styles in home*/
+.rooms {
+  width: 500px;
+  height: 4w60px;
+  overflow: hidden;
+}
+.room-name {
+  text-align: left;
+}
+.room-info {
+  color: green;
+}
 .room-opt {
   display: flex;
   flex-direction: row;
