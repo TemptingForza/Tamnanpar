@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextBtn = document.querySelector(".next");
   const dots = document.querySelectorAll(".dot");
 
+  //const modal = document.getElementById("imageModal");
+  //const modalImg = document.getElementById("modalImage");
+  //const captionText = document.getElementById("caption");
+
+  // Prevent default drag behavior on images
   let currentSlide = 0;
   let startX;
   let currentX;

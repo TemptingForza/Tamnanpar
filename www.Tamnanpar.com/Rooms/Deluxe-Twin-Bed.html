@@ -25,69 +25,150 @@
       .Room-name{
         left: 200px;
       }
-.roomslide-container {
-    display: flex;
-}
-.slideshow-container {
-    height: auto;
 
-}
 
-.mySlides img{
-  width: 100%;
-  height: 1000px;
-}
 
-.mySlides {
-  display: none; /* hide all slides initially */
-}
+      /*room slides*/
+      .slider-container {
+        position: relative;
+        width: 800px;
+        height: 525px;
+        overflow: hidden;
+        border-radius: 5px;
+        background-color: rgba(65, 64, 64, 0.24);
+      }
 
-.mySlides.active {
-  display: block; /* show the active slide */
-}
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
+      #slides {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+      }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-  cursor: pointer;
-}
+      .slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: white;
+        user-select: none;
+        transition: all 0.5s ease;
+      }
+      @media (max-width: 768px) {
+        .slide {
+          flex: 0 0 80%; /* Each slide takes 80% of the container on smaller screens */
+          /*margin: 0 10px; /* Add some margin for spacing */
+        }
+      }
 
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 20px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 2px;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
+      /* Extra small screens */
+      @media (max-width: 480px) {
+        .slide {
+          flex: 0 0 90%; /* Each slide takes 90% of the container on very small screens */
+          /*margin: 0 5px; /* Adjust margin for very small screens */
+        }
+      }
 
-.active, .dot:hover {
-  background-color: #717171;
-}
 
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
+       /* Modal styles
+       .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .caption {
+            margin: auto;
+            display: block;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+        }
+        Modal styles end*/
+
+
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        color: white;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 50%;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav-button:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .prev {
+        left: 20px;
+        z-index: 0;
+      }
+
+      .next {
+        right: 20px;
+        z-index: 0;
+      }
+
+      .dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 0;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .dot.active {
+        background: white;
+      }
+      /*room slides end*/
     </style>
     <body>
         <div header>
@@ -130,42 +211,25 @@
           </div>
           <section class="TitleAndImageSlider">
             <div class="roomslide-container">
-              <div class="slideshow-container">
-  
-                  <div class="mySlides fade active" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
-                    <img src="../../RoomVariety/Cozy-King/Cozy King 5.jpg" alt="Room 1" style="width: 100%; height: 100%; object-fit: cover;">
-                  </div>
-                  <div class="mySlides fade" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
-                    <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin2.jpg" alt="Room 2" style="width: 100%; height: 100%; object-fit: cover;">
-                  </div>
-                  <div class="mySlides fade" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
-                      <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin3.jpg" alt="Room 3" style="width: 100%; height: 100%; object-fit: cover;">
-                  </div>
-                  <div class="mySlides fade" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
-                      <img src="../../RoomVariety/Deluxe-Twin/DT5.jpg" alt="Room 4" style="width: 100%; height: 100%; object-fit: cover;">
-                  </div>
-                  <div class="mySlides fade" style="width: 600px; height: 500px; overflow: hidden; border-radius: 5px;">
-                      <img src="../../RoomVariety/Deluxe-Twin/DT8.jpg" alt="Room 5" style="width: 100%; height: 100%; object-fit: cover;">
-                  </div>
-                    
-      
-                  <!-- Add more slides here -->
-                  <div class="prevNext" style="text-align: right;">
-                  <a class="prev" onclick="plusSlides(-1)">❮</a>
-                  <span id="slideNum" style="font-family: 'Courier New', Courier, monospace;">1</span>
-                  <span style="font-family: 'Courier New', Courier, monospace;">/</span>
-                  <span style="font-family: 'Courier New', Courier, monospace;">5</span>
-                  <a class="next" onclick="plusSlides(1)">❯</a>
-                  </div>
-      
-                  <div class="dot-container">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                    <!-- Add more dots here -->
-                  </div>
+              <div class="slider-container">
+                <div id="slides">
+                  <div class="slide"><img draggable="false" src="../../RoomVariety/Deluxe-Twin/Deluxe Twin1.jpg" style="width: 100%;"></div>
+                  <div class="slide"><img draggable="false" src="../../RoomVariety/Deluxe-Twin/Deluxe Twin2.jpg" style="width: 100%;"></div>
+                  <div class="slide"><img draggable="false" src="../../RoomVariety/Deluxe-Twin/Deluxe Twin3.jpg" style="width: 100%;"></div>
+                  <div class="slide"><img draggable="false" src="../../RoomVariety/Deluxe-Twin/DT5.jpg" style="width: 100%;"></div>
+                  <div class="slide"><img draggable="false" src="../../RoomVariety/Deluxe-Twin/DT8.jpg" style="width: 100%;"></div>
+                </div>
+                
+                <button class="nav-button prev">←</button>
+                <button class="nav-button next">→</button>
+                
+                <div class="dots">
+                  <div class="dot active"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
               </div>
             </div>
             <div class="roomDetails" style="padding-left: 10px; padding-right: 10px;">
@@ -176,6 +240,8 @@
                 <br>
             </div>
           </section>
+          <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 50px;">
+          </div><!--module-room-stripe this is to have a gap between intro and rooms-->
       </div>
         <footer id="footer">
             <section class="footer-content">
