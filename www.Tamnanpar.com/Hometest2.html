@@ -11,7 +11,178 @@
         <link rel="stylesheet" href="../Styles/Tamanpar.css"> 
     </head>
     <script src="../Scripts/Sidebar.js"></script>
+    <script src="../Scripts/RoomSlides.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+    <style>
+        .slider-container {
+        position: relative;
+        width: 1000px;
+        height: 635px;
+        overflow: hidden;
+        background-color: rgba(65, 64, 64, 0.24);
+      }
+
+      #slides {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+      }
+
+      .slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: white;
+        user-select: none;
+        transition: all 0.5s ease;
+      }
+      .overlay {
+          position: absolute;
+          top: 0; /* Position at the bottom */
+          left: 0; /* Align to the left */
+          height: 100%;
+          width: 25%;
+          background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+          color: white; /* Text color */
+          text-align: center; /* Center text */
+          padding: 20px; /* Padding around text */
+          display: flex; /* Use flexbox */
+          justify-content: center; /* Center text horizontally */
+          align-items: center; /* Center text vertically */
+          overflow: hidden; /* Hide overflow text */
+          transition: all 0.5s ease;
+      }
+      
+      .text {
+        padding: 10px;
+          font-size: 24px; /* Font size for the text */
+          font-weight: bold; /* Bold text */
+          max-width: 100%; /* Prevent text from exceeding overlay width */
+          overflow-wrap: break-word;
+      }
+      @media (max-width: 768px) {
+        .slide {
+          flex: 0 0 80%; /* Each slide takes 80% of the container on smaller screens */
+          /*margin: 0 10px; /* Add some margin for spacing */
+        }
+      }
+
+      /* Extra small screens */
+      @media (max-width: 480px) {
+        .slide {
+          flex: 0 0 90%; /* Each slide takes 90% of the container on very small screens */
+          /*margin: 0 5px; /* Adjust margin for very small screens */
+        }
+      }
+
+      .slide:nth-child(1) { background-color: #ff7675; }
+      .slide:nth-child(2) { background-color: #74b9ff; }
+      .slide:nth-child(3) { background-color: #55efc4; }
+      .slide:nth-child(4) { background-color: #ff7675; }
+      .slide:nth-child(5) { background-color: #74b9ff; }
+      .slide:nth-child(6) { background-color: #55efc4; }
+
+       /* Modal styles
+       .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .caption {
+            margin: auto;
+            display: block;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+        }
+        Modal styles end*/
+
+
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        color: white;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 50%;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav-button:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .prev {
+        left: 20px;
+        z-index: 0;
+      }
+
+      .next {
+        right: 20px;
+        z-index: 0;
+      }
+
+      .dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 0;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .dot.active {
+        background: white;
+      }
+    </style>
     <body>
         <div header>
             <div class="header-ui">
@@ -38,7 +209,7 @@
                         <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../Logo/icons8-hamburger-menu-48.png"></a></li>
                     </ul>
                     <div class="book-now">
-                        <button><a href="ContactUs.html">Book Now</a></button>
+                        <button><a href="ContactUs.html">Contact Us</a></button>
                         </div>
                 </nav>
             </div>
@@ -54,20 +225,20 @@
             </div><!--module-room-stripe this is to have a gap between intro and rooms-->
             <div class="welcome">
                 <div class="title">
-                    <h2>Welcome</h2>
+                    <h2 style="color: rgb(4, 158, 4);">Welcome</h2>
                     <h1>to</h1>
-                    <p>Tamnanpar</p>
+                    <h2 style="color: rgba(218, 165, 32, 1);">Tamnanpar</h2>
                 </div>
                 <div class="homeDetails">
                     <div class="homeVideo">
                         <iframe class="tamnanpar-Video" src="https://www.youtube-nocookie.com/embed/z52F9z4IhYE?controls=1">
                         </iframe>
                     </div>
-                    <p>The thai mean of Tamnanpar is <b>"A Legend Of Forest" (绿光森林)</b>. It means green forest.</p>
-                    <p>When the sun shines on the green plants, it looks like a green forest.</p>
-                    <p>From enter to restaurant, there are all natural views when you walk pass, could not resist taking photos. Select favorite-seat sit down,</p>
-                    <p>neither next to waterfall or patio, enjoy a delicious thai meal, and a fresh cold coconut for lunch, immediately fresh up from tired and hot body.</p>
-                    <p>At night, romantic candle dinner and lovely singer singing english songs for you, what a wonderful moment!.</p>
+                    <p>The thai mean of Tamnanpar is <b>"A Legend Of Forest" (绿光森林)</b>. It means green forest.<br>
+                    When the sun shines on the green plants, it looks like a green forest.<br>
+                    From enter to restaurant, there are all natural views when you walk pass, could not resist taking photos. Select favorite-seat sit down,<br>
+                    neither next to waterfall or patio, enjoy a delicious thai meal, and a fresh cold coconut for lunch, immediately fresh up from tired and hot body.<br>
+                    At night, romantic candle dinner and lovely singer singing english songs for you, what a wonderful moment!.</p>
                 </div>
                 <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 40px;">
                 </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
@@ -90,23 +261,26 @@
                         <br>
                     </div>
                     <div class="homeimages">
-                        <div class="homeRestaurant-img" style="text-align: left;">
-                            <div class="homeRestHistory" style="background-color: rgb(46, 46, 46, 0.2); border-radius: 5px;">
-                                <p><b>Open for more than 20 years</b></p>
-                                <p>The restaurant was started at the end of the year.
+                        <div class="homeRestaurant-img" style="text-align: left; background-color: antiquewhite;">
+                            <div class="homeRestImageContainer">
+                                <img src="../Restaurant/FenderFoto-02908.jpg">
+                            </div>
+                            <div class="homeRestHistory" style="border-radius: 2px;">
+                                <p><b>Open for more than 20 years</b><br>
+                                The restaurant was started at the end of the year.
                                 1997 during Tom Yum Kung Starting from liking nature of Mr. Chairat The president of the company
                                 thinks that if you like it you must do it, you must preserve it, and awaken the spirits of people who love nature.
                                 love the environment So it was created from an empty rice field.
                                 Make it a forest Take unused raw materials such as scrap wood and decorate them beautifully, including trees, rocks, cliffs,
                                 fountains, and waterfalls, creating a perfectly complete ecosystem.</p>
                             </div>
-                            <div class="homeRestImageContainer">
-                                <img src="../Restaurant/FenderFoto-02908.jpg">
-                            </div>
                         </div>
-                        <div class="homeRestaurant-img" style="text-align: left;">
-                            <div class="homeRestHistory" style="background-color: rgb(46, 46, 46, 0.2); border-radius: 5px;">
-                                <p><b>In the restaurant section</b><br><br>
+                        <div class="homeRestaurant-img" style="text-align: left; background-color: antiquewhite;">
+                            <div class="homeRestImageContainer">
+                                <img src="../Restaurant/FenderFoto-02910.jpg">
+                            </div>
+                            <div class="homeRestHistory" style="border-radius: 2px;">
+                                <p><b>In the restaurant section</b><br>
                                 There are chefs who have been together for a long time, more than 20 years,
                                 living together as a family.
                                 Parents are chefs Since my children were little until today, I have grown up and come to work at the shop and never go anywhere.
@@ -114,9 +288,6 @@
                                 Take care of the environment Meticulous attention to every dish Focus on healthy menus Most of the ingredients come                 
                                 from surrounding communities, such as fishing communities that deliver seafood.
                                 Khao Sampaothong Community Also sends duck eggs, chicken eggs, plants.</p>
-                            </div>
-                            <div class="homeRestImageContainer">
-                                <img src="../Restaurant/FenderFoto-02910.jpg">
                             </div>
                         </div>
                     </div>
@@ -135,13 +306,33 @@
                     <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
                     </div><!--module-room-stripe this is to have a gap between intro and rooms-->
                     <div class="waterslide" style="display: flex; justify-content: center; align-items: center;">
-                        <div class="gallery js-flickity"data-flickity='{ "cellAlign": "center", "contain": true }'>
-                            <div class="gallery-cell"><img src="../Waterpark/FenderFoto-02778.jpg" alt="Image 1"></div>
-                            <div class="gallery-cell"><img src="../Waterpark/FenderFoto-02779.jpg" alt="Image 2"></div>
-                            <div class="gallery-cell"><img src="../Waterpark/LINE_ALBUM_สวนน้ำ_221215_5.jpg" alt="Image 3" style="width: 750px;"></div>
-                        </div>
-                        <div class="infos" style="justify-content: center; align-items: center; text-align: left;">
-                            <p>Tamnanpar Water Park is a water park located in the resort.<br> 
+
+                        <div class="slider-container">
+                            <div id="slides">
+                                <div class="slide"><img draggable="false" src="../Images/Riverside.jpg" style="width: 100%;"></div>
+                                <div class="slide"><img draggable="false" src="../Images/RestaurantPath.jpg" style="width: 100%;"></div>
+                                <div class="slide">Slide 3</div>
+                                <div class="slide">Slide 4</div>
+                                <div class="slide">Slide 5</div>
+                                <div class="slide">Slide 6</div>
+                            </div>
+                            
+                            <button class="nav-button prev">←</button>
+                            <button class="nav-button next">→</button>
+                            
+                            <div class="dots">
+                              <div class="dot active"></div>
+                              <div class="dot"></div>
+                              <div class="dot"></div>
+                              <div class="dot"></div>
+                              <div class="dot"></div>
+                              <div class="dot"></div>
+                            </div>
+                          </div>
+
+
+                        <div class="infos" style="justify-content: center; align-items: center; text-align: left; padding-left: 15px;">
+                            <p style="font-size: 20px; line-height: 40px;">Tamnanpar Water Park is a water park located in the resort.<br> 
                             The water park is divided into 3 areas, namely the children's area, the family area, and the adult area.<br> 
                             The children's area is a water park for children.<br> 
                             There are many water games for children to play. The family area is a water park for families.<br> 
@@ -150,14 +341,16 @@
                             The water park is open from <b>10:00 am to 6:00 pm</b>. The water park is closed on Mondays.</p>
                             <br>
                         </div>
-                    </div>
-                    <div class="homeimages">
-                        <!--img src="../Waterpark/FenderFoto-02778.jpg">
-                        <img src="../Waterpark/LINE_ALBUM_สวนน้ำ_221215_5.jpg">
-                        <img src="../Waterpark/FenderFoto-02779.jpg"-->
+                        <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                        </div><!--module-room-stripe this is to have a gap between intro and rooms-->
                     </div>
                     <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
-                    </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+                    <!--div class="homeimages">
+                        <img src="../Waterpark/FenderFoto-02778.jpg">
+                        <img src="../Waterpark/LINE_ALBUM_สวนน้ำ_221215_5.jpg">
+                        <img src="../Waterpark/FenderFoto-02779.jpg">
+                    </div-->
                 </div>
             </div>
         </section>

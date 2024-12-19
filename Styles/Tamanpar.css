@@ -150,7 +150,7 @@ nav li:first-child {
 .menu-button .path {
   color: whitesmoke;
 }
-@media (max-width: 880px) {
+@media (max-width: 1041px) {
   .hideOnMobile {
     display: none;
   }
@@ -234,7 +234,6 @@ nav li:first-child {
 }
 
 h2 {
-  color: rgb(4, 158, 4);
   font-size: 140px;
   font-family: "Cardo", serif;
 }
@@ -274,11 +273,15 @@ h1 {
 
 .homeDetails p {
   color: #212121;
-  font-size: 15px;
+  font-size: 20px;
   font-family: "Helvetica";
 }
 
 /*Restauraunt in home styles*/
+:root {
+  --history-height: auto;
+}
+
 .contents {
   display: flex;
   justify-content: center;
@@ -317,51 +320,41 @@ h1 {
   justify-content: space-evenly;
   margin-bottom: 3vh;
 }
+
 .homeRestaurant-img {
+  text-align: left;
   width: 45vw;
-  height: auto;
-  border-radius: 5px;
-  padding: 10px, 10px;
+  height: 100%;
+  border-radius: 3px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
+.homeRestHistory {
+  flex: 1; /* This makes both history sections take up equal space */
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.homeRestaurant-img:hover {
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
+}
 .homeRestaurant-img p {
   padding: 1vh 1vw;
+  margin: 0; /* Remove default paragraph margins */
 }
-
 .homeimages img {
   width: 45vw;
-}
-.homeRestHistory {
   height: auto;
 }
-@media (max-width: 1446px) {
-  .homeRestHistory {
-    height: 178.97px;
-  }
+.homeRestImageContainer {
+  flex: 0 0 auto; /* Prevent image container from flexing */
 }
-@media (max-width: 1446px) {
+@media (max-width: 1680px) {
   .homeRestHistory {
-    height: 178.97px;
-  }
-}
-@media (max-width: 1262px) {
-  .homeRestHistory {
-    height: calc(178.97px + 18px);
-  }
-}
-@media (max-width: 1091px) {
-  .homeRestHistory {
-    height: calc(178.97px + 36px);
-  }
-}
-@media (max-width: 997px) {
-  .homeRestHistory {
-    height: calc(178.97px + 48px);
-  }
-}
-@media (max-width: 866px) {
-  .homeRestHistory {
-    height: calc(178.97px + 64px);
+    min-height: 200px; /* Adjust minimum height for smaller screens */
   }
 }
 @media (max-width: 800px) {
@@ -374,10 +367,10 @@ h1 {
   }
   .homeRestaurant-img {
     width: 100%;
-    justify-content: space-evenly;
+    margin-bottom: 20px; /* Add space between stacked boxes */
   }
   .homeRestHistory {
-    height: auto;
+    min-height: auto; /* Allow natural height on mobile */
   }
 }
 /*Restauraunt styles in home end*/
@@ -413,6 +406,12 @@ h1 {
   height: 4w60px;
   overflow: hidden;
 }
+.roomgrid {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding-bottom: 10px;
+}
+
 .room-name {
   text-align: left;
 }
