@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //const modal = document.getElementById("imageModal");
   //const modalImg = document.getElementById("modalImage");
   //const captionText = document.getElementById("caption");
-
   // Prevent default drag behavior on images
   let currentSlide = 0;
   let startX;
@@ -27,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //const slideWidth =
     //window.innerWidth < 480 ? 90 : window.innerWidth < 768 ? 80 : 100; // Adjust slide width based on screen size
     slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
     //slider.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
     //slider.style.transform = `translateX(-${currentSlide * 33.333}%)`;
 

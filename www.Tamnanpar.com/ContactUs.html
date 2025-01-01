@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../Styles/Tamanpar.css"> 
     </head>
     <script src="../Scripts/Sidebar.js"></script>
+    <script src="../Scripts/ContactUs.js"></script>
     <body>
         <div header>
             <div class="header-ui">
@@ -34,9 +35,6 @@
                         <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
                         <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../Logo/icons8-hamburger-menu-48.png"></a></li>
                     </ul>
-                    <div class="book-now">
-                        <button><a href="ContactUs.html">Book Now</a></button>
-                        </div>
                 </nav>
             </div>
         </div><!--Nav End-->
@@ -67,21 +65,27 @@
                             <div class="input-names">
                                 <div class="first-name">
                                     <p>First Name</p>
-                                    <input type="text" id="name-details" minlength="1" required="" name="User-First">
+                                    <input type="text" id="User-First" minlength="1" required="" name="User-First">
+                                    <div class="valid-first">
+
+                                    </div>
                                 </div>
                                 <div class="last-name">
                                     <p>Last Name</p>
-                                    <input type="text" id="name-details" minlength="1" required="" name="User-Surname">
+                                    <input type="text" id="User-Surname" minlength="1" required="" name="User-Surname">
+                                    <div class="valid-last">
+
+                                    </div>
                                 </div>
                             </div>
                             <div class="input-contact-info">
                                 <div class="Phone-number">
                                     <p>Phone-Number</p>
-                                    <input autocomplete="tel" type="tel" id="name-details" required min="0" step="1" name="User-Phone">
+                                    <input autocomplete="tel" type="tel" id="phone" required min="0" step="1" name="User-Phone">
                                 </div>
                                 <div class="Email-address">
                                     <p>Email</p>
-                                    <input autocomplete="email" type="email" id="name-details" required="@" name="User-Email">
+                                    <input autocomplete="email" type="email" id="email" required="@" name="User-Email">
                                 </div>
                             </div>
                             <div class="message">
@@ -92,7 +96,7 @@
                             </div>
                         </div>
                         <div class="submit-message" style="padding-top: 2vh;">
-                            <button type="submit">Submit Message</button>
+                            <button type="submit" id="submit">Submit Message</button>
                         </div>
                 </form>
                         <div class="other-contact" style="align-items: center; justify-content: center; display: flex; flex-direction: column;">

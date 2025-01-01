@@ -45,26 +45,31 @@
       }
       .overlay {
           position: absolute;
-          top: 0; /* Position at the bottom */
-          left: 0; /* Align to the left */
           height: 100%;
-          width: 25%;
-          background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+          width: 100%;
+          top: 0;
+          transform: translateX(0);
           color: white; /* Text color */
-          text-align: center; /* Center text */
           padding: 20px; /* Padding around text */
           display: flex; /* Use flexbox */
-          justify-content: center; /* Center text horizontally */
+          justify-content: left; /* Center text horizontally */
           align-items: center; /* Center text vertically */
           overflow: hidden; /* Hide overflow text */
+          pointer-events: none;
+          z-index: 5;
       }
 
       .text {
         padding: 10px;
           font-size: 24px; /* Font size for the text */
+          width: 25%;
+          height: 103%;
+          text-align: left; /* Center text */
+          align-items: center;
           font-weight: bold; /* Bold text */
           max-width: 100%; /* Prevent text from exceeding overlay width */
           overflow-wrap: break-word;
+          background: linear-gradient(to Right, rgba(0, 0, 0, 0.4), rgba(197, 197, 197, 0)); /* Semi-transparent background */
       }
       @media (max-width: 768px) {
         .slide {
@@ -224,7 +229,10 @@
               <div class="text">Your Text for Image 1hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
             </div>
           </div>
-          <div class="slide"><img draggable="false" src="../Images/RestaurantPath.jpg"></div>
+          <div class="slide"><img draggable="false" src="../Images/RestaurantPath.jpg" style="width: 100%;">
+            <div class="overlay">
+              <div class="text">Your Images starting</div>
+            </div></div>
           <div class="slide">Slide 3</div>
           <div class="slide">Slide 4</div>
           <div class="slide">Slide 5</div>

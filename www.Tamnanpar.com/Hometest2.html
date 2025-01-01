@@ -12,7 +12,6 @@
     </head>
     <script src="../Scripts/Sidebar.js"></script>
     <script src="../Scripts/RoomSlides.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
     <style>
         .slider-container {
         position: relative;
@@ -20,6 +19,17 @@
         height: 635px;
         overflow: hidden;
         background-color: rgba(65, 64, 64, 0.24);
+      }
+      .waterslide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media (max-width: 1820px) {
+        .waterslide {
+            flex-direction: column;
+        }
       }
 
       #slides {
@@ -43,29 +53,11 @@
         user-select: none;
         transition: all 0.5s ease;
       }
-      .overlay {
-          position: absolute;
-          top: 0; /* Position at the bottom */
-          left: 0; /* Align to the left */
-          height: 100%;
-          width: 25%;
-          background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
-          color: white; /* Text color */
-          text-align: center; /* Center text */
-          padding: 20px; /* Padding around text */
-          display: flex; /* Use flexbox */
-          justify-content: center; /* Center text horizontally */
-          align-items: center; /* Center text vertically */
-          overflow: hidden; /* Hide overflow text */
-          transition: all 0.5s ease;
-      }
-      
-      .text {
-        padding: 10px;
-          font-size: 24px; /* Font size for the text */
-          font-weight: bold; /* Bold text */
-          max-width: 100%; /* Prevent text from exceeding overlay width */
-          overflow-wrap: break-word;
+      @media (max-width: 1066px) {
+        .slider-container{
+            width: auto;
+            height: auto;
+        }
       }
       @media (max-width: 768px) {
         .slide {
@@ -224,15 +216,14 @@
             <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 250px;">
             </div><!--module-room-stripe this is to have a gap between intro and rooms-->
             <div class="welcome">
-                <div class="title">
-                    <h2 style="color: rgb(4, 158, 4);">Welcome</h2>
-                    <h1>to</h1>
-                    <h2 style="color: rgba(218, 165, 32, 1);">Tamnanpar</h2>
-                </div>
                 <div class="homeDetails">
                     <div class="homeVideo">
-                        <iframe class="tamnanpar-Video" src="https://www.youtube-nocookie.com/embed/z52F9z4IhYE?controls=1">
-                        </iframe>
+                        <iframe width="1864" height="767" src="https://www.youtube-nocookie.com/embed/pPoJMLg7k4U" title="Tamnapar Resort &amp; Restaurant Rayong, Thailand" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="title">
+                        <h2 style="color: rgb(4, 158, 4);">Welcome</h2>
+                        <h1>to</h1>
+                        <h2 style="color: rgba(218, 165, 32, 1);">Tamnanpar</h2>
                     </div>
                     <p>The thai mean of Tamnanpar is <b>"A Legend Of Forest" (绿光森林)</b>. It means green forest.<br>
                     When the sun shines on the green plants, it looks like a green forest.<br>
@@ -305,12 +296,12 @@
                 <div class="details">
                     <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
                     </div><!--module-room-stripe this is to have a gap between intro and rooms-->
-                    <div class="waterslide" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="waterslide">
 
                         <div class="slider-container">
                             <div id="slides">
-                                <div class="slide"><img draggable="false" src="../Images/Riverside.jpg" style="width: 100%;"></div>
-                                <div class="slide"><img draggable="false" src="../Images/RestaurantPath.jpg" style="width: 100%;"></div>
+                                <div class="slide"><img draggable="false" src="../Images/Riverside.jpg" style="width: 100%; height: auto;"></div>
+                                <div class="slide"><img draggable="false" src="" style="width: 100%; height: auto;"></div>
                                 <div class="slide">Slide 3</div>
                                 <div class="slide">Slide 4</div>
                                 <div class="slide">Slide 5</div>
@@ -331,7 +322,7 @@
                           </div>
 
 
-                        <div class="infos" style="justify-content: center; align-items: center; text-align: left; padding-left: 15px;">
+                        <div class="infos" style="justify-content: center; align-items: center; text-align: left; padding-left: 15px; padding-top: 15px;">
                             <p style="font-size: 20px; line-height: 40px;">Tamnanpar Water Park is a water park located in the resort.<br> 
                             The water park is divided into 3 areas, namely the children's area, the family area, and the adult area.<br> 
                             The children's area is a water park for children.<br> 
@@ -341,10 +332,10 @@
                             The water park is open from <b>10:00 am to 6:00 pm</b>. The water park is closed on Mondays.</p>
                             <br>
                         </div>
-                        <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                        <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 40px;">
                         </div><!--module-room-stripe this is to have a gap between intro and rooms-->
                     </div>
-                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 40px;">
                     </div><!--module-room-stripe this is to have a gap between intro and rooms-->
                     <!--div class="homeimages">
                         <img src="../Waterpark/FenderFoto-02778.jpg">
