@@ -1,239 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <script src="scripts.js"></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="../Styles/Style.css"> 
+    <style></style>
   </head>
-  <body style="background-color: rgb(214, 199, 199);">
-    <header class="header">
-      <a href="Home.html" class="Logo"><img src="LOGO TAMNANPAR (L).png"></a>
-      <nav>
-        <div>
-          <ul id ="menu">
-            <a href="Home.html">Home</a>
-            <a href="Resort.html?lang=th">Resort</a>
-            <a href="Restaurant.html?lang=th">Restaurant</a>
-            <a href="booking.html?lang=th">Booking</a>
-            <a href="about.html?lang=th">About</a>
+  <body>
+    <div header>
+      <div class="header-ui">
+        <nav class="header-nav" aria-label="main navigation">
+          <!--This is sidebar nav-->
+          <ul class="sidebar">
+            <li onclick="hideSidebar()">
+              <a href="#"
+                ><img class="Logo" src="../Logo/icons8-close-60.png"
+              /></a>
+            </li>
+            <li><a href="Hometest2.html">Home</a></li>
+            <li><a href="Restaurant2.html">Dining</a></li>
+            <li><a href="#">Resort</a></li>
+            <li><a href="Waterpark2.html">Rooms</a></li>
+            <li><a href="#">Meeting & Events</a></li>
+            <li><a href="ContactUs.html">Contact</a></li>
           </ul>
-        </div>
-      </nav>  
-    </header>
-    <div class="row">
-      <div class="column">
-        <div class="Room">
-          <img id="roomImage" onclick="disableScroll()" src="RoomVariety/Deluxe Twin/Deluxe Twin1.jpg" style="width: 100%;">
-          <div id="popup" class="popup">
-            <div class="Slide-Contain">
-
-              <div class="Slides">
-                <img src="RoomVariety/Deluxe Twin/Deluxe Twin1.jpg" style="width:100%; height:80%">
-              </div>
-
-              <div class="Slides">
-                <img src="RoomVariety/Deluxe Twin/Deluxe Twin2.jpg" style="width:100%; height:80%">
-              </div>
-
-              <div class="Slides">
-                <img src="RoomVariety/Deluxe Twin/Deluxe Twin3.jpg" style="width:100%; height:80%">
-              </div>
-            
-              <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-            </div>
-            <div class="popup-content">
-              <button id="closePopup" onclick="enableScroll()"><b>X</b></button>
-              <!-- Your popup content goes here -->
-              <p>Your popup content goes here</p>
-            </div>
-          </div>
-          <div class="desc"><b>Deluxe Twin Bed</b></div>
-        </div>
-
-        <div class="Room">
-          <img id="roomImage1" onclick="disableScroll()" src="RoomVariety/Poolside King/Poolside 1.jpg" style="width: 100%;">
-          <div id="popup1" class="popup">
-            <div class="Slide-Contain">
-
-              <div class="Slides1">
-                <img src="RoomVariety/Poolside King/Poolside 1.jpg" style="width:100%; height:80%">
-              </div>
-
-              <div class="Slides1">
-                <img src="RoomVariety/Poolside King/Poolside 2.jpg" style="width:100%; height:80%">
-              </div>
-
-              <div class="Slides1">
-                <img src="RoomVariety/Poolside King/Poolside 3.jpg" style="width:100%; height:80%">
-              </div>
-            
-              <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-
-            </div>
-            <div class="popup-content">
-              <button id="closePopup1"onclick="enableScroll()"><b>X</b></button>
-              <!-- Your popup content goes here -->
-              <p>Your popup content goes here1</p>
-            </div>
-          </div>
-          <div class="desc"><b>Poolside King Bed</b></div>
-        </div>
-
-        <div class="Room">
-          <img id="roomImage2" onclick="disableScroll()" src="RoomVariety/Cozy King/Cozy King1.jpg" style="width: 100%;">
-          <div id="popup2" class="popup">
-          
-            <!--when uncommenting code dont forget css versions-->
-            <!--dont forget the commenting when out-->
-            <div class="Slide-Contain">
-
-              <div class="Slides2">
-                <img src="RoomVariety/Cozy King/Cozy King1.jpg" style="width:100%; height:80%">
-              </div>
-
-              <div class="Slides2">
-                <img src="RoomVariety/Cozy King/Cozy King2.jpg" style="width:100%; height:80%">
-              </div>
-
-              <div class="Slides2">
-                <img src="RoomVariety/Cozy King/Cozy King 3.jpg" style="width:100%; height:80%">
-              </div>
-              <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-
-            </div>
-            <div class="popup-content">
-              <button id="closePopup2" onclick="enableScroll()"><b>X</b></button>
-              <!-- Your popup content goes here -->
-              <p>Your popup content goes here2</p>
-            </div>
-          </div>
-          <div class="desc"><b>Cozy King Bed</b></div>
-        </div>
-
-        <div class="Room">
-          <img id="roomImage3" onclick="disableScroll()" src="RoomVariety/Private Pool Suite/PV1.jpg" style="width: 100%;">
-          <div id="popup3" class="popup">
-            <div class="Slide-Contain"></div>
-
-              <div class="Slides3">
-                <img src="RoomVariety/Private Pool Suite/PV1.jpg" style="width:100%; height:80%">
-              </div>
-
-              <div class="Slides3">
-                <img src="RoomVariety/Private Pool Suite/FenderFoto--3.jpg" style="width:100%; height:80%">
-              </div>
-
-              <div class="Slides3">
-                <img src="RoomVariety/Private Pool Suite/FenderFoto--9.jpg" style="width:100%; height:80%">
-              </div>
-              <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
-            
-            </div>
-            <div class="popup-content">
-              <button id="closePopup3" onclick="enableScroll()"><b>X</b></button>
-              <!-- Your popup content goes here -->
-              <p>Your popup content goes here3</p>
-            </div>
-          </div>
-          <div class="desc"><b>Private Pool Suite</b></div>
-        </div>
-
-        <div class="Room">
-          <img id="roomImage4" src="RoomVariety/Superior Twin/#10094" style="width: 100%;">
-          <div id="popup4" class="popup">
-            <!--div class="Slide-Contain">
-
-              <div class="Slides4">
-                <img src="RoomVariety/Superior Twin/#10094" style="width:100%; height:80%">
-              </div>
-  
-              <div class="Slides4">
-                <img src="RoomVariety/Superior Twin/#10095" style="width:100%; height:80%">
-              </div>
-  
-              <div class="Slides4">
-                <img src="RoomVariety/Superior Twin/--" style="width:100%; height:80%">
-              </div>
-
-              <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
-
-            </div-->
-            <div class="popup-content">
-              <button id="closePopup4"><b>X</b></button>
-              <!-- Your popup content goes here -->
-              <p>Your popup content goes here4</p>
-            </div>
-          </div>
-          <div class="desc"><b>Superior Twin Bed</b></div>
-        </div>
-
-        <div class="Room">
-          <img id="roomImage5" src="RoomVariety/Deluxe King/#10094" style="width: 100%;">
-          <div id="popup5" class="popup">
-            <!--div class="Slide-Contain">
-
-              <div class="Slides5">
-                <img src="RoomVariety/Deluxe King/#10094" style="width:100%; height:80%">
-              </div>
-  
-              <div class="Slides5">
-                <img src="RoomVariety/Deluxe King/#10095" style="width:100%; height:80%">
-              </div>
-  
-              <div class="Slides5">
-                <img src="RoomVariety/Deluxe King/--" style="width:100%; height:80%">
-              </div>
-
-              <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
-
-            </div-->
-            <div class="popup-content">
-              
-              <button id="closePopup5"><b>X</b></button>
-              <!-- Your popup content goes here -->
-              <p>Your popup content goes here5</p>
-            </div>
-          </div>
-          <div class="desc"><b>Deluxe King Bed</b></div>
-        </div>
-
+          <ul class="nav-main">
+            <!--This is shown nav-->
+            <li>
+              <a href="Hometest2.html" class="Logo"
+                ><img
+                  src="../Logo/LOGO TAMNANPAR (L).png"
+                  style="color: whitesmoke"
+              /></a>
+            </li>
+            <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
+            <li class="hideOnMobile"><a href="Restaurant2.html">Dining</a></li>
+            <li class="hideOnMobile"><a href="Resort1.html">Resort</a></li>
+            <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
+            <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
+            <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
+            <li class="menu-button" onclick="showSidebar()">
+              <a href="#"><img src="../Logo/icons8-hamburger-menu-48.png" /></a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <script src="Roompopup.js"></script>
-      <script src="Slides.js"></script>
-       <script>
-        function disableScroll() {
-            // Get the current page scroll position
-            scrollTop =
-                window.pageYOffset ||
-                document.documentElement.scrollTop;
-            scrollLeft =
-                window.pageXOffset ||
-                document.documentElement.scrollLeft,
- 
-                // if any scroll is attempted,
-                // set this to the previous value
-                window.onscroll = function () {
-                    window.scrollTo(scrollLeft, scrollTop);
-                };
-        }
- 
-        function enableScroll() {
-            window.onscroll = function () { };
-        }
-      </script>
-
-<!--<img src="RestaurantPath.jpg" style="width:100%; margin-top: 0px">-->
-
-    
     </div>
+    <!--Nav End-->
+
+    <!--Font: Cardo
+    nav bar should be golden brown
+    -->
   </body>
+  <section>
+    <div style="padding-bottom: 200px"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <ul class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/category">Category</a></li>
+        <li><a href="/subcategory">Subcategory</a></li>
+        <li>Current Page</li>
+      </ul>
+    </nav>
+  </section>
 </html>
-    

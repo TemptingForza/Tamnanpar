@@ -57,19 +57,25 @@
           overflow: hidden; /* Hide overflow text */
           pointer-events: none;
           z-index: 5;
+          user-select: none;
+        transition: all 0.5s ease;
       }
-
+      .text-container {
+        height: 105%;
+        width: 35%;
+        left: 0;
+        background: linear-gradient(to Right, rgba(0, 0, 0, 0.4), rgba(197, 197, 197, 0)); /* Semi-transparent background */
+        align-items: center;
+        font-weight: bold;
+      }
       .text {
         padding: 10px;
           font-size: 24px; /* Font size for the text */
-          width: 25%;
-          height: 103%;
           text-align: left; /* Center text */
           align-items: center;
           font-weight: bold; /* Bold text */
           max-width: 100%; /* Prevent text from exceeding overlay width */
           overflow-wrap: break-word;
-          background: linear-gradient(to Right, rgba(0, 0, 0, 0.4), rgba(197, 197, 197, 0)); /* Semi-transparent background */
       }
       @media (max-width: 768px) {
         .slide {
@@ -190,32 +196,44 @@
     <body>
         <div header>
             <div class="header-ui">
-                <nav>
-                    <!--This is sidebar nav-->
-                    <ul class="sidebar">
-                        <li onclick=hideSidebar()><a href="#"><img class="Logo" src="../Logo/icons8-close-60.png"></a></li>
-                        <li><a href="Hometest2.html">Home</a></li>
-                        <li><a href="Restaurant2.html">Dining</a></li>
-                        <li><a href="#">Resort</a></li>
-                        <li><a href="Waterpark2.html">Rooms</a></li>
-                        <li><a href="#">Meeting & Events</a></li>
-                        <li><a href="ContactUs.html">Contact</a></li>
-                    </ul>
-                    <ul>
-                        <!--This is shown nav-->
-                        <li><a href="Resort1.html" class="Logo"><img src="../Logo/LOGO TAMNANPAR (L).png" style="color: whitesmoke;"></a></li>
-                        <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
-                        <li class="hideOnMobile"><a href="Restaurant2.html">Dining</a></li>
-                        <li class="hideOnMobile"><a href="#">Resort</a></li>
-                        <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
-                        <li class="hideOnMobile"><a href="Meetings&Events.html">Meeting & Events</a></li>
-                        <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
-                        <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../Logo/icons8-hamburger-menu-48.png"></a></li>
-                    </ul>
-                    <div class="book-now">
-                        <button><a href="ContactUs.html">Book Now</a></button>
-                        </div>
-                </nav>
+              <nav class="header-nav" aria-label="main navigation">
+                <!--This is sidebar nav-->
+                <ul class="sidebar">
+                  <li onclick="hideSidebar()">
+                    <a href="#"
+                      ><img class="Logo" src="../Logo/icons8-close-60.png"
+                    /></a>
+                  </li>
+                  <li><a href="Hometest2.html">Home</a></li>
+                  <li><a href="Restaurant2.html">Dining</a></li>
+                  <li><a href="#">Resort</a></li>
+                  <li><a href="Waterpark2.html">Rooms</a></li>
+                  <li><a href="#">Meeting & Events</a></li>
+                  <li><a href="ContactUs.html">Contact</a></li>
+                </ul>
+                <ul class="nav-main">
+                  <!--This is shown nav-->
+                  <li>
+                    <a href="Hometest2.html" class="Logo"
+                      ><img
+                        src="../Logo/LOGO TAMNANPAR (L).png"
+                        style="color: whitesmoke"
+                    /></a>
+                  </li>
+                  <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
+                  <li class="hideOnMobile"><a href="Restaurant2.html">Dining</a></li>
+                  <li class="hideOnMobile"><a href="Resort1.html">Resort</a></li>
+                  <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
+                  <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
+                  <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
+                  <li class="menu-button" onclick="showSidebar()">
+                    <a href="#"><img src="../Logo/icons8-hamburger-menu-48.png" /></a>
+                  </li>
+                </ul>
+                <div class="book-now">
+                  <button><a href="ContactUs.html">Contact Us</a></button>
+                  </div>
+              </nav>
             </div>
         </div><!--Nav End-->
 
@@ -226,12 +244,16 @@
         <div id="slides">
           <div class="slide"><img draggable="false" src="../Images/Riverside.jpg" style="width: 100%;">
             <div class="overlay">
-              <div class="text">Your Text for Image 1hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+              <div class="text-container">
+                <div class="text">Your Text for Image 1hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhhhhhhhhhhhh</div>
+              </div>
             </div>
           </div>
           <div class="slide"><img draggable="false" src="../Images/RestaurantPath.jpg" style="width: 100%;">
             <div class="overlay">
-              <div class="text">Your Images starting</div>
+              <div class="text-container">  
+                <div class="text">Your Images starting</div>
+              </div>
             </div></div>
           <div class="slide">Slide 3</div>
           <div class="slide">Slide 4</div>

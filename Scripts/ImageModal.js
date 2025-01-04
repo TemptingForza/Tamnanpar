@@ -1,25 +1,32 @@
-// Get the modal
-var modal = document.getElementById("imageModal");
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const caption = document.getElementById("caption");
+  const closeBtn = document.querySelector(".close");
 
-// Get the image and insert it inside the modal
-var modalImg = document.getElementById("modalImage");
-var captionText = document.getElementById("caption");
+  // Get all images inside the slider
+  const slides = document.querySelectorAll(".slide img");
 
-// Function to open modal
-function openModal(src, caption) {
-  modal.style.display = "block";
-  modalImg.src = src;
-  captionText.innerHTML = caption;
-}
+  // Add click event listener to each image to open the modal
+  slides.forEach((slide) => {
+    slide.addEventListener("click", function () {
+      // Display the modal
+      modal.style.display = "flex";
+      // Set the image source and caption for the modal
+      modalImg.src = this.src;
+      caption.textContent = this.alt;
+    });
+  });
 
-// Function to close modal
-function closeModal() {
-  modal.style.display = "none";
-}
+  // Function to close the modal
+  function closeModal() {
+    modal.style.display = "none";
+  }
 
-// Add double-click event to each slide image
-document.querySelectorAll(".slide img").forEach(function (img) {
-  img.addEventListener("dblclick", function () {
-    openModal(this.src, this.alt || "Image");
+  // Close the modal if the user clicks outside the modal content
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
   });
 });

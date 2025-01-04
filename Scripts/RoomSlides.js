@@ -229,4 +229,39 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowRight") nextSlide();
     if (e.key === "ArrowLeft") prevSlide();
   });
+
+  const thumbnails = document.querySelectorAll(".thumbnail");
+
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener("click", (e) => {
+      const slideIndex = parseInt(thumbnail.getAttribute("data-slide"), 10);
+      goToSlide(slideIndex);
+      resetAutoSlide(); // Reset the auto slide interval
+      updateThumbnails(slideIndex); // Update active thumbnail
+    });
+  });
+
+  function updateThumbnails(activeIndex) {
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.classList.toggle("active", index === activeIndex);
+    });
+  }
+
+  // Call updateThumbnails whenever you update the slider
+  function updateSlider() {
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    console.log(
+      `Current Slide: ${currentSlide + 1} - Content: ${
+        slides[currentSlide].textContent
+      }`
+    );
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentSlide);
+    });
+
+    // Update the active thumbnail
+    updateThumbnails(currentSlide);
+  }
 });

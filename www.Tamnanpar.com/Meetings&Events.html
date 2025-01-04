@@ -185,32 +185,44 @@
     <body>
         <div header>
             <div class="header-ui">
-                <nav>
-                    <!--This is sidebar nav-->
-                    <ul class="sidebar">
-                        <li onclick=hideSidebar()><a href="#"><img class="Logo" src="../Logo/icons8-close-60.png"></a></li>
-                        <li><a href="Hometest2.html">Home</a></li>
-                        <li><a href="Restaurant2.html">Dining</a></li>
-                        <li><a href="#">Resort</a></li>
-                        <li><a href="Waterpark2.html">Rooms</a></li>
-                        <li><a href="#">Meeting & Events</a></li>
-                        <li><a href="ContactUs.html">Contact</a></li>
-                    </ul>
-                    <ul>
-                        <!--This is shown nav-->
-                        <li><a href="Resort1.html" class="Logo"><img src="../Logo/LOGO TAMNANPAR (L).png" style="color: whitesmoke;"></a></li>
-                        <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
-                        <li class="hideOnMobile"><a href="Restaurant2.html">Dining</a></li>
-                        <li class="hideOnMobile"><a href="#">Resort</a></li>
-                        <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
-                        <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
-                        <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
-                        <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../Logo/icons8-hamburger-menu-48.png"></a></li>
-                    </ul>
-                    <div class="book-now">
-                        <button><a href="ContactUs.html">Book Now</a></button>
-                        </div>
-                </nav>
+              <nav class="header-nav" aria-label="main navigation">
+                <!--This is sidebar nav-->
+                <ul class="sidebar">
+                  <li onclick="hideSidebar()">
+                    <a href="#"
+                      ><img class="Logo" src="../Logo/icons8-close-60.png"
+                    /></a>
+                  </li>
+                  <li><a href="Hometest2.html">Home</a></li>
+                  <li><a href="Restaurant2.html">Dining</a></li>
+                  <li><a href="#">Resort</a></li>
+                  <li><a href="Waterpark2.html">Rooms</a></li>
+                  <li><a href="#">Meeting & Events</a></li>
+                  <li><a href="ContactUs.html">Contact</a></li>
+                </ul>
+                <ul class="nav-main">
+                  <!--This is shown nav-->
+                  <li>
+                    <a href="Hometest2.html" class="Logo"
+                      ><img
+                        src="../Logo/LOGO TAMNANPAR (L).png"
+                        style="color: whitesmoke"
+                    /></a>
+                  </li>
+                  <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
+                  <li class="hideOnMobile"><a href="Restaurant2.html">Dining</a></li>
+                  <li class="hideOnMobile"><a href="Resort1.html">Resort</a></li>
+                  <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
+                  <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
+                  <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
+                  <li class="menu-button" onclick="showSidebar()">
+                    <a href="#"><img src="../Logo/icons8-hamburger-menu-48.png" /></a>
+                  </li>
+                </ul>
+                <div class="book-now">
+                  <button><a href="ContactUs.html">Contact Us</a></button>
+                  </div>
+              </nav>
             </div>
         </div><!--Nav End-->
 

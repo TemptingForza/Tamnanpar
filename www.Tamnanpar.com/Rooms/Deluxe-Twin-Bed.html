@@ -171,78 +171,140 @@
       }
       /*room slides end*/
       /* Modal styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+      .modal {
+  display: none; /* Initially hidden */
+  position: fixed; /* Fix it to the screen */
+  z-index: 12; /* Make sure it's on top of other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
 }
 
+/* Modal Image Styles */
 .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+  z-index: 12;
+  max-width: 90%; /* Make the image 90% of the modal's width */
+  max-height: 90%; /* Make the image 90% of the modal's height */
+  object-fit: contain; /* Ensure the image maintains aspect ratio */
+  margin: auto; /* Center the image horizontally */
 }
 
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
+/* Modal Caption Styles */
 #caption {
-    margin: auto;
-    display: block;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
+  position: absolute; /* Position it inside the modal */
+  bottom: 20px; /* 20px from the bottom */
+  left: 20px; /* 20px from the left */
+  color: white;
+  font-size: 18px;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional for readability */
+}
+
+/* Close Button Styles */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hover effect for close button */
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.thumbnails-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  border-color: gold;
+}
+
+.thumbnail.active {
+  border-color: rgba(218, 165, 32, 1); /* Match with your color scheme */
 }
     </style>
     <body>
         <div header>
             <div class="header-ui">
-                <nav>
-                    <!--This is sidebar nav-->
-                    <ul class="sidebar">
-                      <li onclick=hideSidebar()><a href="#"><img class="Logo" src="../../Logo/icons8-close-60.png"></a></li>
-                      <li><a href="Hometest2.html">Home</a></li>
-                      <li><a href="Restaurant2.html">Dining</a></li>
-                      <li><a href="#">Resort</a></li>
-                      <li><a href="Waterpark2.html">Rooms</a></li>
-                      <li><a href="#">Meeting & Events</a></li>
-                      <li><a href="ContactUs.html">Contact</a></li>
-                  </ul>
-                  <ul>
-                      <!--This is shown nav-->
-                      <li><a href="Hometest2.html" class="Logo"><img src="../../Logo/LOGO TAMNANPAR (L).png" style="color: whitesmoke;"></a></li>
-                      <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
-                      <li class="hideOnMobile"><a href="Restaurant2.html">Dining</a></li>
-                      <li class="hideOnMobile"><a href="#">Resort</a></li>
-                      <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
-                      <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
-                      <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
-                      <li class="menu-button" onclick=showSidebar()><a href="#"><img src="../../Logo/icons8-hamburger-menu-48.png"></a></li>
-                  </ul>
-                  <div class="book-now">
-                      <button><a href="ContactUs.html">Book Now</a></button>
-                      </div>
-                </nav>
+              <nav class="header-nav" aria-label="main navigation">
+                <!--This is sidebar nav-->
+                <ul class="sidebar">
+                  <li onclick="hideSidebar()">
+                    <a href="#"
+                      ><img class="Logo" src="../../Logo/icons8-close-60.png"
+                    /></a>
+                  </li>
+                  <li><a href="Hometest2.html">Home</a></li>
+                  <li><a href="Restaurant2.html">Dining</a></li>
+                  <li><a href="#">Resort</a></li>
+                  <li><a href="Waterpark2.html">Rooms</a></li>
+                  <li><a href="#">Meeting & Events</a></li>
+                  <li><a href="ContactUs.html">Contact</a></li>
+                </ul>
+                <ul class="nav-main">
+                  <!--This is shown nav-->
+                  <li>
+                    <a href="Hometest2.html" class="Logo"
+                      ><img
+                        src="../../Logo/LOGO TAMNANPAR (L).png"
+                        style="color: whitesmoke"
+                    /></a>
+                  </li>
+                  <li class="hideOnMobile"><a href="Hometest2.html">Home</a></li>
+                  <li class="hideOnMobile"><a href="Restaurant2.html">Dining</a></li>
+                  <li class="hideOnMobile"><a href="Resort1.html">Resort</a></li>
+                  <li class="hideOnMobile"><a href="Rooms.html">Rooms</a></li>
+                  <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
+                  <li class="hideOnMobile"><a href="ContactUs.html">ContactUs</a></li>
+                  <li class="menu-button" onclick="showSidebar()">
+                    <a href="#"><img src="../../Logo/icons8-hamburger-menu-48.png" /></a>
+                  </li>
+                </ul>
+                <div class="book-now">
+                  <button><a href="ContactUs.html">Contact Us</a></button>
+                  </div>
+              </nav>
             </div>
         </div><!--Nav End-->
         <section class="site-content" style="background-color: rgb(255, 255, 255);">
           <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 150px;">
-          </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+            </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+            <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 150px;">
+              <!--nav aria-label="Breadcrumb">
+                <ul class="breadcrumb">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/category">Category</a></li>
+                  <li><a href="/subcategory">Subcategory</a></li>
+                  <li>Current Page</li>
+                </ul>
+              </nav-->
           <div class="Roomtitle">
             <div class="Room-Name">
               <h1>Deluxe Twin Bed</h1>
@@ -269,6 +331,13 @@
                   <div class="dot"></div>
                   <div class="dot"></div>
                 </div>
+              </div>
+              <div id="thumbnails" class="thumbnails-container">
+                <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin1.jpg" alt="Thumbnail 1" class="thumbnail" data-slide="0">
+                <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin2.jpg" alt="Thumbnail 2" class="thumbnail" data-slide="1">
+                <img src="../../RoomVariety/Deluxe-Twin/Deluxe Twin3.jpg" alt="Thumbnail 3" class="thumbnail" data-slide="2">
+                <img src="../../RoomVariety/Deluxe-Twin/DT5.jpg" alt="Thumbnail 4" class="thumbnail" data-slide="3">
+                <img src="../../RoomVariety/Deluxe-Twin/DT8.jpg" alt="Thumbnail 5" class="thumbnail" data-slide="4">
               </div>
             </div>
             
