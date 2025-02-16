@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
+        <link rel="stylesheet" href="Styles/Tamanpar.css"> 
+    </head>
+    <script src="Scripts/Sidebar.js"></script>
+    <script src="Scripts/RoomSlides.js"></script>
+    <style>
+        .slider-container {
+        position: relative;
+        width: 1000px;
+        height: 635px;
+        overflow: hidden;
+        background-color: rgba(65, 64, 64, 0.24);
+      }
+      .waterslide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media (max-width: 1820px) {
+        .waterslide {
+            flex-direction: column;
+        }
+      }
+
+      #slides {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+      }
+
+      .slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: white;
+        user-select: none;
+        transition: all 0.5s ease;
+      }
+      @media (max-width: 1066px) {
+        .slider-container{
+            width: auto;
+            height: auto;
+        }
+      }
+      @media (max-width: 768px) {
+        .slide {
+          flex: 0 0 80%; /* Each slide takes 80% of the container on smaller screens */
+          /*margin: 0 10px; /* Add some margin for spacing */
+        }
+      }
+
+      /* Extra small screens */
+      @media (max-width: 480px) {
+        .slide {
+          flex: 0 0 90%; /* Each slide takes 90% of the container on very small screens */
+          /*margin: 0 5px; /* Adjust margin for very small screens */
+        }
+      }
+
+      .slide:nth-child(1) { background-color: #ff7675; }
+      .slide:nth-child(2) { background-color: #74b9ff; }
+      .slide:nth-child(3) { background-color: #55efc4; }
+      .slide:nth-child(4) { background-color: #ff7675; }
+      .slide:nth-child(5) { background-color: #74b9ff; }
+      .slide:nth-child(6) { background-color: #55efc4; }
+
+       /* Modal styles
+       .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .caption {
+            margin: auto;
+            display: block;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+        }
+        Modal styles end*/
+
+
+      .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        color: white;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 50%;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav-button:hover {
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .prev {
+        left: 20px;
+        z-index: 0;
+      }
+
+      .next {
+        right: 20px;
+        z-index: 0;
+      }
+
+      .dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 0;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .dot.active {
+        background: white;
+      }
+    </style>
+    <body>
+        <div header>
+            <div class="header-ui">
+                <nav class="header-nav" aria-label="main navigation">
+                    <!--This is sidebar nav-->
+                    <ul class="sidebar">
+                      <li onclick="hideSidebar()">
+                        <a href="#"
+                          ><img class="Logo" src="Logo/icons8-close-60.png"
+                        /></a>
+                      </li>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="www.Tamnanpar.com/Restaurant2.html">Dining</a></li>
+                      <li><a href="www.Tamnanpar.com/Resort1.html">Resort</a></li>
+                      <li><a href="www.Tamnanpar.com/Waterpark2.html">Rooms</a></li>
+                      <li><a href="www.Tamnanpar.com/Meetings&Events.html">Meeting & Events</a></li>
+                      <li><a href="www.Tamnanpar.com/ContactUs.html">Contact</a></li>
+                    </ul>
+                    <ul class="nav-main">
+                      <!--This is shown nav-->
+                      <li>
+                        <a href="index.html" class="Logo"
+                          ><img
+                            src="Logo/LOGO TAMNANPAR (L).png"
+                            style="color: whitesmoke"
+                        /></a>
+                      </li>
+                      <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                      <li class="hideOnMobile"><a href="www.Tamnanpar.com/Restaurant2.html">Dining</a></li>
+                      <li class="hideOnMobile"><a href="www.Tamnanpar.com/Resort1.html">Resort</a></li>
+                      <li class="hideOnMobile"><a href="www.Tamnanpar.com/Rooms.html">Rooms</a></li>
+                      <li class="hideOnMobile"><a href="#">Meeting & Events</a></li>
+                      <li class="hideOnMobile"><a href="www.Tamnanpar.com/ContactUs.html">ContactUs</a></li>
+                      <li class="menu-button" onclick="showSidebar()">
+                        <a href="#"><img src="Logo/icons8-hamburger-menu-48.png" /></a>
+                      </li>
+                    </ul>
+                    <div class="book-now">
+                        <button><a href="www.Tamnanpar.com/ContactUs.html">Contact Us</a></button>
+                        </div>
+                  </nav>
+            </div>
+        </div><!--Nav End-->
+
+        <!--Font: Cardo
+        nav bar should be golden brown
+        -->
+        
+        <!--Welcome start-->
+        <section class="site-content" style="background-image: url(Images/RestaurantPath.jpg); background-size: 100%;">
+            <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 250px;">
+            </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+            <div class="welcome">
+                <div class="homeDetails">
+                    <div class="homeVideo">
+                        <iframe width="1864" height="767" src="https://www.youtube-nocookie.com/embed/pPoJMLg7k4U" title="Tamnapar Resort &amp; Restaurant Rayong, Thailand" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="title">
+                        <h2 style="color: rgb(4, 158, 4);">Welcome</h2>
+                        <h1>to</h1>
+                        <h2 style="color: rgba(218, 165, 32, 1);">Tamnanpar</h2>
+                    </div>
+                    <p>The thai mean of Tamnanpar is <b>"A Legend Of Forest" (绿光森林)</b>. It means green forest.<br>
+                    When the sun shines on the green plants, it looks like a green forest.<br>
+                    From enter to restaurant, there are all natural views when you walk pass, could not resist taking photos. Select favorite-seat sit down,<br>
+                    neither next to waterfall or patio, enjoy a delicious thai meal, and a fresh cold coconut for lunch, immediately fresh up from tired and hot body.<br>
+                    At night, romantic candle dinner and lovely singer singing english songs for you, what a wonderful moment!.</p>
+                </div>
+                <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 40px;">
+                </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
+            </div>
+        </section>
+        <!--Welcome end-->
+        <!--Restaurant start-->
+        <section class="site-content" style="background-image: url(Restaurant/FenderFoto-03159.jpg); ">
+            <div class="contents">
+                <div class="titles">
+                    <img src="Logo/LOGO TAMNANPAR (L).png">
+                    <h1>Restaurant</h1>
+                </div>
+                <div class="details">
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+                    <div class="info">
+                        <p>Forest legend...living food park Created from the rice fields</p>
+                        <p>It is a restaurant in a natural forest in the middle of Rayong city.</p>
+                        <br>
+                    </div>
+                    <div class="homeimages">
+                        <div class="homeRestaurant-img" style="text-align: left; background-color: white">
+                            <div class="homeRestImageContainer">
+                                <img src="Restaurant/FenderFoto-02908.jpg">
+                            </div>
+                            <div class="homeRestHistory" style="border-radius: 2px;">
+                                <p><b>Open for more than 20 years</b><br>
+                                The restaurant was started at the end of the year.
+                                1997 during Tom Yum Kung Starting from liking nature of Mr. Chairat The president of the company
+                                thinks that if you like it you must do it, you must preserve it, and awaken the spirits of people who love nature.
+                                love the environment So it was created from an empty rice field.
+                                Make it a forest Take unused raw materials such as scrap wood and decorate them beautifully, including trees, rocks, cliffs,
+                                fountains, and waterfalls, creating a perfectly complete ecosystem.</p>
+                            </div>
+                        </div>
+                        <div class="homeRestaurant-img" style="text-align: left; background-color: white;">
+                            <div class="homeRestImageContainer">
+                                <img src="Restaurant/FenderFoto-02910.jpg">
+                            </div>
+                            <div class="homeRestHistory" style="border-radius: 2px;">
+                                <p><b>In the restaurant section</b><br>
+                                There are chefs who have been together for a long time, more than 20 years,
+                                living together as a family.
+                                Parents are chefs Since my children were little until today, I have grown up and come to work at the shop and never go anywhere.
+                                Everyone has a spirit of love for nature.
+                                Take care of the environment Meticulous attention to every dish Focus on healthy menus Most of the ingredients come                 
+                                from surrounding communities, such as fishing communities that deliver seafood.
+                                Khao Sampaothong Community Also sends duck eggs, chicken eggs, plants.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Restaurant end-->
+        <!--Waterpark start-->
+        <section class="site-content" style="background-image: url(Waterpark/221215_5Darken.jpg); ">
+            <div class="contents">
+                <div class="titles">
+                    <img src="Logo/LOGO TAMNANPAR (L).png">
+                    <h1>Waterpark</h1>
+                </div>
+                <div class="details">
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+                    <div class="waterslide" style="padding-left: 20px;">
+
+                        <div class="slider-container">
+                            <div id="slides">
+                                <div class="slide"><img draggable="false" src="Images/Riverside.jpg" style="width: 100%; height: auto;"></div>
+                                <div class="slide"><img draggable="false" src="" style="width: 100%; height: auto;"></div>
+                                <div class="slide">Slide 3</div>
+                                <div class="slide">Slide 4</div>
+                                <div class="slide">Slide 5</div>
+                                <div class="slide">Slide 6</div>
+                            </div>
+                            
+                            <button class="nav-button prev">←</button>
+                            <button class="nav-button next">→</button>
+                            
+                            <div class="dots">
+                              <div class="dot active"></div>
+                              <div class="dot"></div>
+                              <div class="dot"></div>
+                              <div class="dot"></div>
+                              <div class="dot"></div>
+                              <div class="dot"></div>
+                            </div>
+                          </div>
+
+
+                        <div class="infos" style="justify-content: center; align-items: center; text-align: left; padding-left: 15px; padding-top: 15px;">
+                            <h1>Tamnanpar Water Park</h1>
+                            <p style="font-size: 20px;">Tamnanpar Water Park is a water park located in the resort.<br><br> 
+                            The water park is divided into 3 areas, namely the children's area, the family area, and the adult area.<br><br> 
+                            <b>Children's Area:</b> A dedicated water park section with many water games for children to play.<br><br>
+                            <b>Family Area:</b> A section designed for families with various water games and activities.<br><br>
+                            <b>Adult Area:</b> A specialized section catering to adult visitors.<br><br>
+                            <br></p>
+                            <p style="line-height: 25x; font-size: 20px;"><b>Opening hours:</b><br>
+                            10:00 am to 6:00 pm<br></p>
+                            <p style="color: red; font-size: 20px;">Closed on Mondays</p>
+                        </div>
+                        <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 40px;">
+                        </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+                    </div>
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 40px;">
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+                    <!--div class="homeimages">
+                        <img src="Waterpark/FenderFoto-02778.jpg">
+                        <img src="Waterpark/LINE_ALBUM_สวนน้ำ_221215_5.jpg">
+                        <img src="Waterpark/FenderFoto-02779.jpg">
+                    </div-->
+                </div>
+            </div>
+        </section>
+        <!--Waterpark end-->
+        <!--Rooms start-->
+        <section class="site-content" style="background-image: url(RoomVariety/Deluxe-Twin/Deluxe\ Twin1.jpg); ">
+            <div class="contents">
+                <div class="titles">
+                    <img src="Logo/LOGO TAMNANPAR (L).png">
+                    <h1>Rooms</h1>
+                </div>
+                <div class="details">
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+                    <div class="room-opt">
+                        <div class="roomgrid">
+                            <div class="room-images-container">
+                                <img src="RoomVariety/Deluxe-Twin/Deluxe Twin1.jpg">
+                            </div>
+                            <a href="#">↑ Deluxe Twin ↑</a>
+                        </div>
+                        <div class="roomgrid">
+                            <div class="room-images-container">
+                                <img src="RoomVariety/Cozy-King/Cozy King1.jpg">
+                            </div>
+                            <a href="#">↑ Cozy King ↑</a>
+                        </div>
+                        <div class="roomgrid">
+                            <div class="room-images-container">
+                                <img src="RoomVariety/Poolside-King/Poolside 1.jpg">
+                            </div>
+                            <a href="#">↑ Poolside King ↑</a>
+                        </div>
+                    </div>
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 2vh;">
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
+                    <div class="conference-room">
+                        <button>Check out our conference rooms</button>
+                    </div>
+                    <div class="view-buttons"></div>
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
+                </div>
+            </div>
+        </section>
+        <!--Rooms end-->
+        <!--Location start will need a new background-->
+        <section class="site-content" style="background-image: url(Images/Riverside.jpg);">
+            <div class="contents">
+                <div class="titles">
+                    <img src="Logo/LOGO TAMNANPAR (L).png">
+                    <h1>Our Location</h1>
+                </div>
+                <div class="details" style="background-color: rgb(46, 46, 46);">
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms-->
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.163843138927!2d101.40158087545544!3d12.637254172119608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3103016f0514699f%3A0x66988bbf81693c92!2sTamnanpar%20Resort!5e0!3m2!1sen!2snz!4v1721201967006!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                    <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                    </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
+                </div>
+            </div>
+        </section>
+        <!--Location end-->
+        <footer id="main-footer">
+            <section class="footer-content">
+                <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 3vh;">
+                </div><!--module-room-stripe this is to have a gap between intro and rooms--> 
+                <div class="footer-grid">
+                    <div class="footer-logo">
+                        <li><a href="#" class="logo-foot"><img src="Logo/LOGO TAMNANPAR (L).png"></a></li>
+                    </div>
+                    <!--Social start-->
+                    <div class="footer-social">
+                        <!--Will need to check if there is any legal issues could be need to give credit or pay for it-->
+                        <li><a href="#" class="faceb"><img src="Images/Social-media/317746_facebook_social media_social_icon.png"></a></li>
+                        <li><a href="#" class="insta"><img src="Images/Social-media/2993766_instagram_social media_icon.png"></a></li>
+                        <li><a href="#" class="line"><img src="Images/Social-media/8010435_line_message_conversation_communication_chat_icon.png"></a></li>
+                        <li><a href="#" class="tictok"><img src="Images/Social-media/4362958_tiktok_logo_social media_icon.png"></a></li>
+                    </div>
+                    <!--Social end-->
+                    <!--Info start-->
+                    <div class="footer-info">
+                        <li><a class="address" href="https://www.google.com/maps/place/Tamnanpar+Resort/@12.6372542,101.4015809,17z/data=!4m13!1m2!2m1!1stamnanpar!3m9!1s0x3103016f0514699f:0x66988bbf81693c92!5m2!4m1!1i2!8m2!3d12.6382293!4d101.4039916!15sCgl0YW1uYW5wYXJaCyIJdGFtbmFucGFykgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tnspcss?entry=ttu">
+                            167/6 หมู่ที่ 7 Sukhumvit Rd, Phe, Mueang</a></li>
+                        <li><a class="address" href="https://www.google.com/maps/place/Tamnanpar+Resort/@12.6372542,101.4015809,17z/data=!4m13!1m2!2m1!1stamnanpar!3m9!1s0x3103016f0514699f:0x66988bbf81693c92!5m2!4m1!1i2!8m2!3d12.6382293!4d101.4039916!15sCgl0YW1uYW5wYXJaCyIJdGFtbmFucGFykgEMcmVzb3J0X2hvdGVs4AEA!16s%2Fg%2F1tnspcss?entry=ttu">
+                            Rayong District, Rayong 21160, Thailand</a></li>
+                            <li><p>Restaurant Phone-Number: <a class="RestP" href="tel:006638652884"> +66-38-652-884</a></p></li>
+                            <li><p>Resort Phone-Number: <a class="ResortP" href="tel:006638928222">+66-38-928-222</a></p></li>
+                            <li><p>Email: <a class="email" href="mailto:tamnanpar.resort@gmail.com">tamnanpar.resort@gmail.com</a></p></li>
+                            <li><a class="privacy" href="#"><b>Privacy Policy</b></a></li>
+                        </div><!--end of footer-info-->
+                        <!--footer nav start-->
+                        <div class="footer-nav" style="margin-right: 0px;">
+                            <li class="hideOnMobilefoot"><a href="#">Home</a></li>
+                            <li class="hideOnMobilefoot"><a href="#">Restaurant</a></li>
+                            <li class="hideOnMobilefoot"><a href="#">Waterpark</a></li>
+                            <li class="hideOnMobilefoot"><a href="#">Resort</a></li>
+                            <li class="hideOnMobilefoot"><a href="#">ContactUs</a></li>
+                        </div>
+                        <!--footer nav end-->
+                    </div>
+                    <!--Info end-->
+                </div>
+                <div class="module-room-stripe" style="padding-top: 0px; padding-bottom: 5vh;">
+                </div><!--module-room-stripe this is to have a gap between intro and rooms-->    
+            </section>
+        </footer>
+    </body>
+
